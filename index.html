@@ -25,7 +25,7 @@
       </button>
       <nav class="nav-links" id="navLinks">
         <a href="#inicio">Inicio</a>
-        <a href="#galeria">Galería</a>
+        <a href="#galeria-adultos">Galería</a>
         <a href="#mesas-dulces">Mesas Dulces</a>
         <a href="#sabores">Sabores</a>
         <a href="#nosotros">Nosotros</a>
@@ -49,59 +49,177 @@
     <div class="hero-scroll-hint">↓</div>
   </section>
 
-  <!-- ===== GALERÍA DE TORTAS ===== -->
-  <section class="section" id="galeria">
+  <!-- ===== GALERÍA: FIESTAS PARA ADULTOS ===== -->
+  <section class="section" id="galeria-adultos">
     <div class="section-inner">
       <p class="section-eyebrow reveal">Nuestras Creaciones</p>
-      <h2 class="section-title reveal">Galería de Tortas</h2>
-      <p class="section-desc reveal">Cada torta es una obra única, hecha con ingredientes seleccionados y decorada a mano para que tu celebración sea inolvidable.</p>
+      <h2 class="section-title reveal">Fiestas para Adultos</h2>
+      <p class="section-desc reveal">Tortas elegantes y personalizadas para cada celebración. Cada detalle es pensado para que tu momento especial sea inolvidable.</p>
 
-      <div class="gallery-tabs reveal">
-        <button class="tab active" data-tab="todas">Todas</button>
-        <button class="tab" data-tab="matrimonio">Matrimonio</button>
+      <div class="gallery-tabs reveal" data-gallery="adultos">
+        <button class="tab active" data-tab="todas-adultos">Todas</button>
         <button class="tab" data-tab="cumpleanos">Cumpleaños</button>
-        <button class="tab" data-tab="infantil">Infantiles</button>
-        <button class="tab" data-tab="empresarial">Empresariales</button>
+        <button class="tab" data-tab="matrimonio">Matrimonio</button>
+        <button class="tab" data-tab="grados">Grados</button>
+        <button class="tab" data-tab="aniversarios">Aniversarios</button>
+        <button class="tab" data-tab="empresariales">Empresariales</button>
       </div>
 
-      <div class="gallery-grid" id="galleryGrid">
-        <!-- Las imágenes se cargan aquí con JS desde la carpeta images/galeria/ -->
-        <!-- Mientras no tengas fotos reales, se muestran los placeholders -->
-        <div class="gallery-item" data-cat="matrimonio">
-          <div class="gallery-placeholder">
-            <span>Torta de Matrimonio</span>
-            <small>Sube tu foto aquí</small>
-          </div>
+      <div class="gallery-grid" id="galleryAdultos">
+        <div class="gallery-item adultos" data-cat="cumpleanos">
+          <img src="images/galeria/adultos/cumpleanos/cumpleanos-1.jpg" alt="Torta de cumpleaños" loading="lazy" />
         </div>
-        <div class="gallery-item" data-cat="cumpleanos">
-          <div class="gallery-placeholder">
-            <span>Torta de Cumpleaños</span>
-            <small>Sube tu foto aquí</small>
-          </div>
+        <div class="gallery-item adultos" data-cat="cumpleanos">
+          <img src="images/galeria/adultos/cumpleanos/cumpleanos-2.jpg" alt="Torta de cumpleaños" loading="lazy" />
         </div>
-        <div class="gallery-item" data-cat="infantil">
-          <div class="gallery-placeholder">
-            <span>Torta Infantil</span>
-            <small>Sube tu foto aquí</small>
-          </div>
+        <div class="gallery-item adultos" data-cat="cumpleanos">
+          <img src="images/galeria/adultos/cumpleanos/cumpleanos-3.jpg" alt="Torta de cumpleaños" loading="lazy" />
         </div>
-        <div class="gallery-item" data-cat="empresarial">
-          <div class="gallery-placeholder">
-            <span>Torta Empresarial</span>
-            <small>Sube tu foto aquí</small>
-          </div>
+        <div class="gallery-item adultos" data-cat="cumpleanos">
+          <img src="images/galeria/adultos/cumpleanos/cumpleanos-4.jpg" alt="Torta de cumpleaños" loading="lazy" />
         </div>
-        <div class="gallery-item" data-cat="matrimonio">
-          <div class="gallery-placeholder">
-            <span>Torta de Matrimonio</span>
-            <small>Sube tu foto aquí</small>
-          </div>
+        <div class="gallery-item adultos" data-cat="cumpleanos">
+          <img src="images/galeria/adultos/cumpleanos/cumpleanos-5.jpg" alt="Torta de cumpleaños" loading="lazy" />
         </div>
-        <div class="gallery-item" data-cat="cumpleanos">
-          <div class="gallery-placeholder">
-            <span>Torta de Cumpleaños</span>
-            <small>Sube tu foto aquí</small>
-          </div>
+        <div class="gallery-item adultos" data-cat="matrimonio">
+          <img src="images/galeria/adultos/matrimonio/matrimonio-1.jpg" alt="Torta de matrimonio" loading="lazy" />
+        </div>
+        <div class="gallery-item adultos" data-cat="matrimonio">
+          <img src="images/galeria/adultos/matrimonio/matrimonio-2.jpg" alt="Torta de matrimonio" loading="lazy" />
+        </div>
+        <div class="gallery-item adultos" data-cat="matrimonio">
+          <img src="images/galeria/adultos/matrimonio/matrimonio-3.jpg" alt="Torta de matrimonio" loading="lazy" />
+        </div>
+        <div class="gallery-item adultos" data-cat="matrimonio">
+          <img src="images/galeria/adultos/matrimonio/matrimonio-4.jpg" alt="Torta de matrimonio" loading="lazy" />
+        </div>
+        <div class="gallery-item adultos" data-cat="matrimonio">
+          <img src="images/galeria/adultos/matrimonio/matrimonio-5.jpg" alt="Torta de matrimonio" loading="lazy" />
+        </div>
+        <div class="gallery-item adultos" data-cat="grados">
+          <img src="images/galeria/adultos/grados/grados-1.jpg" alt="Torta de grados" loading="lazy" />
+        </div>
+        <div class="gallery-item adultos" data-cat="grados">
+          <img src="images/galeria/adultos/grados/grados-2.jpg" alt="Torta de grados" loading="lazy" />
+        </div>
+        <div class="gallery-item adultos" data-cat="grados">
+          <img src="images/galeria/adultos/grados/grados-3.jpg" alt="Torta de grados" loading="lazy" />
+        </div>
+        <div class="gallery-item adultos" data-cat="grados">
+          <img src="images/galeria/adultos/grados/grados-4.jpg" alt="Torta de grados" loading="lazy" />
+        </div>
+        <div class="gallery-item adultos" data-cat="grados">
+          <img src="images/galeria/adultos/grados/grados-5.jpg" alt="Torta de grados" loading="lazy" />
+        </div>
+        <div class="gallery-item adultos" data-cat="aniversarios">
+          <img src="images/galeria/adultos/aniversarios/aniversarios-1.jpg" alt="Torta de aniversario" loading="lazy" />
+        </div>
+        <div class="gallery-item adultos" data-cat="aniversarios">
+          <img src="images/galeria/adultos/aniversarios/aniversarios-2.jpg" alt="Torta de aniversario" loading="lazy" />
+        </div>
+        <div class="gallery-item adultos" data-cat="aniversarios">
+          <img src="images/galeria/adultos/aniversarios/aniversarios-3.jpg" alt="Torta de aniversario" loading="lazy" />
+        </div>
+        <div class="gallery-item adultos" data-cat="aniversarios">
+          <img src="images/galeria/adultos/aniversarios/aniversarios-4.jpg" alt="Torta de aniversario" loading="lazy" />
+        </div>
+        <div class="gallery-item adultos" data-cat="aniversarios">
+          <img src="images/galeria/adultos/aniversarios/aniversarios-5.jpg" alt="Torta de aniversario" loading="lazy" />
+        </div>
+        <div class="gallery-item adultos" data-cat="empresariales">
+          <img src="images/galeria/adultos/empresariales/empresariales-1.jpg" alt="Torta empresarial" loading="lazy" />
+        </div>
+        <div class="gallery-item adultos" data-cat="empresariales">
+          <img src="images/galeria/adultos/empresariales/empresariales-2.jpg" alt="Torta empresarial" loading="lazy" />
+        </div>
+        <div class="gallery-item adultos" data-cat="empresariales">
+          <img src="images/galeria/adultos/empresariales/empresariales-3.jpg" alt="Torta empresarial" loading="lazy" />
+        </div>
+        <div class="gallery-item adultos" data-cat="empresariales">
+          <img src="images/galeria/adultos/empresariales/empresariales-4.jpg" alt="Torta empresarial" loading="lazy" />
+        </div>
+        <div class="gallery-item adultos" data-cat="empresariales">
+          <img src="images/galeria/adultos/empresariales/empresariales-5.jpg" alt="Torta empresarial" loading="lazy" />
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== GALERÍA: CELEBRACIONES PARA JÓVENES ===== -->
+  <section class="section section-alt" id="galeria-jovenes">
+    <div class="section-inner">
+      <p class="section-eyebrow reveal">Momentos Especiales</p>
+      <h2 class="section-title reveal">Grandes Celebraciones para Jóvenes</h2>
+      <p class="section-desc reveal">Tortas llenas de color, fantasía y personalidad para los momentos más importantes de los más jóvenes de la familia.</p>
+
+      <div class="gallery-tabs reveal" data-gallery="jovenes">
+        <button class="tab active" data-tab="todas-jovenes">Todas</button>
+        <button class="tab" data-tab="primera-comunion">Primera Comunión</button>
+        <button class="tab" data-tab="quinceanos">Quinceaños</button>
+        <button class="tab" data-tab="baby-shower">Baby Shower</button>
+        <button class="tab" data-tab="infantiles">Infantiles</button>
+      </div>
+
+      <div class="gallery-grid" id="galleryJovenes">
+        <div class="gallery-item jovenes" data-cat="primera-comunion">
+          <img src="images/galeria/jovenes/primera-comunion/primera-comunion-1.jpg" alt="Torta primera comunión" loading="lazy" />
+        </div>
+        <div class="gallery-item jovenes" data-cat="primera-comunion">
+          <img src="images/galeria/jovenes/primera-comunion/primera-comunion-2.jpg" alt="Torta primera comunión" loading="lazy" />
+        </div>
+        <div class="gallery-item jovenes" data-cat="primera-comunion">
+          <img src="images/galeria/jovenes/primera-comunion/primera-comunion-3.jpg" alt="Torta primera comunión" loading="lazy" />
+        </div>
+        <div class="gallery-item jovenes" data-cat="primera-comunion">
+          <img src="images/galeria/jovenes/primera-comunion/primera-comunion-4.jpg" alt="Torta primera comunión" loading="lazy" />
+        </div>
+        <div class="gallery-item jovenes" data-cat="primera-comunion">
+          <img src="images/galeria/jovenes/primera-comunion/primera-comunion-5.jpg" alt="Torta primera comunión" loading="lazy" />
+        </div>
+        <div class="gallery-item jovenes" data-cat="quinceanos">
+          <img src="images/galeria/jovenes/quinceanos/quinceanos-1.jpg" alt="Torta quinceaños" loading="lazy" />
+        </div>
+        <div class="gallery-item jovenes" data-cat="quinceanos">
+          <img src="images/galeria/jovenes/quinceanos/quinceanos-2.jpg" alt="Torta quinceaños" loading="lazy" />
+        </div>
+        <div class="gallery-item jovenes" data-cat="quinceanos">
+          <img src="images/galeria/jovenes/quinceanos/quinceanos-3.jpg" alt="Torta quinceaños" loading="lazy" />
+        </div>
+        <div class="gallery-item jovenes" data-cat="quinceanos">
+          <img src="images/galeria/jovenes/quinceanos/quinceanos-4.jpg" alt="Torta quinceaños" loading="lazy" />
+        </div>
+        <div class="gallery-item jovenes" data-cat="quinceanos">
+          <img src="images/galeria/jovenes/quinceanos/quinceanos-5.jpg" alt="Torta quinceaños" loading="lazy" />
+        </div>
+        <div class="gallery-item jovenes" data-cat="baby-shower">
+          <img src="images/galeria/jovenes/baby-shower/baby-shower-1.jpg" alt="Torta baby shower" loading="lazy" />
+        </div>
+        <div class="gallery-item jovenes" data-cat="baby-shower">
+          <img src="images/galeria/jovenes/baby-shower/baby-shower-2.jpg" alt="Torta baby shower" loading="lazy" />
+        </div>
+        <div class="gallery-item jovenes" data-cat="baby-shower">
+          <img src="images/galeria/jovenes/baby-shower/baby-shower-3.jpg" alt="Torta baby shower" loading="lazy" />
+        </div>
+        <div class="gallery-item jovenes" data-cat="baby-shower">
+          <img src="images/galeria/jovenes/baby-shower/baby-shower-4.jpg" alt="Torta baby shower" loading="lazy" />
+        </div>
+        <div class="gallery-item jovenes" data-cat="baby-shower">
+          <img src="images/galeria/jovenes/baby-shower/baby-shower-5.jpg" alt="Torta baby shower" loading="lazy" />
+        </div>
+        <div class="gallery-item jovenes" data-cat="infantiles">
+          <img src="images/galeria/jovenes/infantiles/infantiles-1.jpg" alt="Torta infantil" loading="lazy" />
+        </div>
+        <div class="gallery-item jovenes" data-cat="infantiles">
+          <img src="images/galeria/jovenes/infantiles/infantiles-2.jpg" alt="Torta infantil" loading="lazy" />
+        </div>
+        <div class="gallery-item jovenes" data-cat="infantiles">
+          <img src="images/galeria/jovenes/infantiles/infantiles-3.jpg" alt="Torta infantil" loading="lazy" />
+        </div>
+        <div class="gallery-item jovenes" data-cat="infantiles">
+          <img src="images/galeria/jovenes/infantiles/infantiles-4.jpg" alt="Torta infantil" loading="lazy" />
+        </div>
+        <div class="gallery-item jovenes" data-cat="infantiles">
+          <img src="images/galeria/jovenes/infantiles/infantiles-5.jpg" alt="Torta infantil" loading="lazy" />
         </div>
       </div>
     </div>
