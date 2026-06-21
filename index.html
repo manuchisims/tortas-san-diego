@@ -36,7 +36,14 @@
 
   <!-- ===== HERO ===== -->
   <section class="hero" id="inicio">
-    <div class="hero-bg"></div>
+    <!-- Slider de fondo -->
+    <div class="hero-slider">
+      <div class="hero-slide active" style="background-image: url('images/fondo-1.jpg')"></div>
+      <div class="hero-slide" style="background-image: url('images/fondo-2.jpg')"></div>
+      <div class="hero-slide" style="background-image: url('images/fondo-3.jpg')"></div>
+    </div>
+    <div class="hero-overlay"></div>
+
     <div class="hero-content reveal">
       <p class="hero-eyebrow">Pastelería Artesanal · Cali, Colombia</p>
       <h1 class="hero-title">Tortas San<br><em>Diego</em></h1>
@@ -46,8 +53,26 @@
         Pedir por WhatsApp
       </a>
     </div>
+
+    <!-- Dots del slider -->
+    <div class="hero-dots">
+      <button class="hero-dot active" data-index="0" aria-label="Foto 1"></button>
+      <button class="hero-dot" data-index="1" aria-label="Foto 2"></button>
+      <button class="hero-dot" data-index="2" aria-label="Foto 3"></button>
+    </div>
+
     <div class="hero-scroll-hint">↓</div>
   </section>
+
+  <!-- ===== LIGHTBOX ===== -->
+  <div class="lightbox" id="lightbox">
+    <button class="lightbox-close" id="lightboxClose" aria-label="Cerrar">✕</button>
+    <button class="lightbox-prev" id="lightboxPrev" aria-label="Anterior">‹</button>
+    <button class="lightbox-next" id="lightboxNext" aria-label="Siguiente">›</button>
+    <div class="lightbox-img-wrap">
+      <img src="" alt="" id="lightboxImg" />
+    </div>
+  </div>
 
   <!-- ===== GALERÍA: FIESTAS PARA ADULTOS ===== -->
   <section class="section" id="galeria-adultos">
