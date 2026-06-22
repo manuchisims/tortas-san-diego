@@ -6,20 +6,23 @@
   <meta name="description" content="Tortas San Diego – Pastelería artesanal en Cali. Tortas de matrimonio, cumpleaños, infantiles y empresariales. Más de 30 años de tradición." />
   <meta name="keywords" content="tortas Cali, pastelería Cali, torta negra envinada, tortas de matrimonio Cali, tortas infantiles Cali, Tortas San Diego" />
   <title>Tortas San Diego – Pastelería Artesanal en Cali</title>
- 
+
   <!-- Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Jost:wght@300;400;500&display=swap" rel="stylesheet">
- 
+
   <link rel="stylesheet" href="css/estilos.css" />
 </head>
 <body>
- 
+
   <!-- ===== NAVBAR ===== -->
   <header class="navbar" id="navbar">
     <div class="nav-inner">
-      <a href="#inicio" class="nav-logo">Tortas San Diego</a>
+      <a href="#inicio" class="nav-logo">
+        <img src="images/logo.png" alt="Tortas San Diego" class="nav-logo-img" />
+        <span>Tortas San Diego</span>
+      </a>
       <button class="nav-toggle" id="navToggle" aria-label="Menú">
         <span></span><span></span><span></span>
       </button>
@@ -33,7 +36,7 @@
       </nav>
     </div>
   </header>
- 
+
   <!-- ===== HERO ===== -->
   <section class="hero" id="inicio">
     <!-- Slider de fondo -->
@@ -43,7 +46,7 @@
       <div class="hero-slide" style="background-image: url('images/fondo-3.jpg')"></div>
     </div>
     <div class="hero-overlay"></div>
- 
+
     <div class="hero-content reveal">
       <p class="hero-eyebrow">Pastelería Artesanal · Cali, Colombia</p>
       <h1 class="hero-title">Tortas San<br><em>Diego</em></h1>
@@ -53,17 +56,17 @@
         Pedir por WhatsApp
       </a>
     </div>
- 
+
     <!-- Dots del slider -->
     <div class="hero-dots">
       <button class="hero-dot active" data-index="0" aria-label="Foto 1"></button>
       <button class="hero-dot" data-index="1" aria-label="Foto 2"></button>
       <button class="hero-dot" data-index="2" aria-label="Foto 3"></button>
     </div>
- 
+
     <div class="hero-scroll-hint">↓</div>
   </section>
- 
+
   <!-- ===== LIGHTBOX ===== -->
   <div class="lightbox" id="lightbox">
     <button class="lightbox-close" id="lightboxClose" aria-label="Cerrar">✕</button>
@@ -73,14 +76,14 @@
       <img src="" alt="" id="lightboxImg" />
     </div>
   </div>
- 
+
   <!-- ===== GALERÍA: FIESTAS PARA ADULTOS ===== -->
   <section class="section" id="galeria-adultos">
     <div class="section-inner">
       <p class="section-eyebrow reveal">Nuestras Creaciones</p>
       <h2 class="section-title reveal">Fiestas para Adultos</h2>
       <p class="section-desc reveal">Tortas elegantes y personalizadas para cada celebración. Cada detalle es pensado para que tu momento especial sea inolvidable.</p>
- 
+
       <div class="gallery-tabs reveal" data-gallery="adultos">
         <button class="tab active" data-tab="todas-adultos">Todas</button>
         <button class="tab" data-tab="cumpleanos">Cumpleaños</button>
@@ -89,7 +92,7 @@
         <button class="tab" data-tab="aniversarios">Aniversarios</button>
         <button class="tab" data-tab="empresariales">Empresariales</button>
       </div>
- 
+
       <div class="gallery-grid" id="galleryAdultos">
         <div class="gallery-item adultos" data-cat="cumpleanos">
           <img src="images/galeria/adultos/cumpleanos/cumpleanos-1.jpg" alt="Torta de cumpleaños" loading="lazy" />
@@ -169,14 +172,14 @@
       </div>
     </div>
   </section>
- 
+
   <!-- ===== GALERÍA: CELEBRACIONES PARA JÓVENES ===== -->
   <section class="section section-alt" id="galeria-jovenes">
     <div class="section-inner">
       <p class="section-eyebrow reveal">Momentos Especiales</p>
       <h2 class="section-title reveal">Grandes Celebraciones para Jóvenes</h2>
       <p class="section-desc reveal">Tortas llenas de color, fantasía y personalidad para los momentos más importantes de los más jóvenes de la familia.</p>
- 
+
       <div class="gallery-tabs reveal" data-gallery="jovenes">
         <button class="tab active" data-tab="todas-jovenes">Todas</button>
         <button class="tab" data-tab="primera-comunion">Primera Comunión</button>
@@ -184,7 +187,7 @@
         <button class="tab" data-tab="baby-shower">Baby Shower</button>
         <button class="tab" data-tab="infantiles">Infantiles</button>
       </div>
- 
+
       <div class="gallery-grid" id="galleryJovenes">
         <div class="gallery-item jovenes" data-cat="primera-comunion">
           <img src="images/galeria/jovenes/primera-comunion/primera-comunion-1.jpg" alt="Torta primera comunión" loading="lazy" />
@@ -249,7 +252,7 @@
       </div>
     </div>
   </section>
- 
+
   <!-- ===== MESAS DULCES ===== -->
   <section class="section section-alt" id="mesas-dulces">
     <div class="section-inner two-col">
@@ -264,8 +267,8 @@
           <li>Paletas de chocolate</li>
           <li>Minipepitos con crema pastelera</li>
           <li>Bolitas de coco</li>
-          <li>Alfajores</li>
           <li>Mazapanes de leche</li>
+          <li>Alfajores</li>
         </ul>
         <a href="https://wa.me/573002367175?text=Hola%2C%20me%20gustar%C3%ADa%20cotizar%20una%20mesa%20dulce" class="btn-secondary" target="_blank" rel="noopener">Cotizar mesa dulce</a>
       </div>
@@ -274,14 +277,14 @@
       </div>
     </div>
   </section>
- 
+
   <!-- ===== SABORES ===== -->
   <section class="section" id="sabores">
     <div class="section-inner">
       <p class="section-eyebrow reveal">Para cada gusto</p>
       <h2 class="section-title reveal">Sabores de Torta</h2>
       <p class="section-desc reveal">Cada sabor lo hacemos lo más natural posible: usamos frutas en trozos o en jugo, y aliños como cocoa o canela que realzan el sabor de cada creación.</p>
- 
+
       <div class="sabores-grid">
         <div class="sabor-card reveal">
           <div class="sabor-icon">◈</div>
@@ -326,7 +329,7 @@
       </div>
     </div>
   </section>
- 
+
   <!-- ===== NOSOTROS ===== -->
   <section class="section section-alt" id="nosotros">
     <div class="section-inner two-col reverse">
@@ -355,13 +358,13 @@
       </div>
     </div>
   </section>
- 
+
   <!-- ===== CONTACTO ===== -->
   <section class="section" id="contacto">
     <div class="section-inner">
       <p class="section-eyebrow reveal">Encuéntranos</p>
       <h2 class="section-title reveal">Contacto</h2>
- 
+
       <div class="contact-grid">
         <div class="contact-info reveal-left">
           <div class="contact-item">
@@ -385,7 +388,7 @@
               <p><a href="https://wa.me/573002367175" target="_blank" rel="noopener">300 236 7175</a></p>
             </div>
           </div>
- 
+
           <div class="social-links">
             <a href="https://www.facebook.com/TortaSanDiego" target="_blank" rel="noopener" aria-label="Facebook">
               <svg viewBox="0 0 24 24" fill="currentColor" width="22" height="22"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
@@ -397,13 +400,13 @@
               <svg viewBox="0 0 24 24" fill="currentColor" width="22" height="22"><path d="M12.525.02c1.31-.02 2.61-.01 3.91-.02.08 1.53.63 3.09 1.75 4.17 1.12 1.11 2.7 1.62 4.24 1.79v4.03c-1.44-.05-2.89-.35-4.2-.97-.57-.26-1.1-.59-1.62-.93-.01 2.92.01 5.84-.02 8.75-.08 1.4-.54 2.79-1.35 3.94-1.31 1.92-3.58 3.17-5.91 3.21-1.43.08-2.86-.31-4.08-1.03-2.02-1.19-3.44-3.37-3.65-5.71-.02-.5-.03-1-.01-1.49.18-1.9 1.12-3.72 2.58-4.96 1.66-1.44 3.98-2.13 6.15-1.72.02 1.48-.04 2.96-.04 4.44-.99-.32-2.15-.23-3.02.37-.63.41-1.11 1.04-1.36 1.75-.21.51-.15 1.07-.14 1.61.24 1.64 1.82 3.02 3.5 2.87 1.12-.01 2.19-.66 2.77-1.61.19-.33.4-.67.41-1.06.1-1.79.06-3.57.07-5.36.01-4.03-.01-8.05.02-12.07z"/></svg>
             </a>
           </div>
- 
+
           <a href="https://wa.me/573002367175?text=Hola%2C%20me%20gustar%C3%ADa%20hacer%20un%20pedido" class="btn-whatsapp large" target="_blank" rel="noopener">
             <svg viewBox="0 0 24 24" fill="currentColor" width="20" height="20"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.117.549 4.099 1.51 5.828L.057 23.625a.75.75 0 0 0 .918.918l5.797-1.453A11.94 11.94 0 0 0 12 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.75a9.712 9.712 0 0 1-4.953-1.357l-.355-.211-3.683.922.937-3.585-.231-.368A9.712 9.712 0 0 1 2.25 12C2.25 6.615 6.615 2.25 12 2.25S21.75 6.615 21.75 12 17.385 21.75 12 21.75z"/></svg>
             Hacer un pedido
           </a>
         </div>
- 
+
         <div class="map-container reveal-right">
           <iframe
             src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3982.5!2d-76.532119!3d3.429949!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8e30a6915cdd750b%3A0x4f28d3e542409360!2sCra.+29a+%23+10-46%2C+Junin%2C+Cali%2C+Valle+del+Cauca!5e0!3m2!1ses!2sco!4v1234567890"
@@ -419,10 +422,66 @@
       </div>
     </div>
   </section>
- 
+
+  <!-- ===== RESEÑAS ===== -->
+  <section class="section section-alt" id="resenas">
+    <div class="section-inner">
+      <p class="section-eyebrow reveal">Lo que dicen nuestros clientes</p>
+      <h2 class="section-title reveal">Reseñas de Google</h2>
+      <div class="rating-summary reveal">
+        <span class="rating-score">5.0</span>
+        <div class="rating-stars">★★★★★</div>
+        <span class="rating-count">Excelente · 42 reseñas en Google</span>
+      </div>
+
+      <div class="resenas-grid">
+        <div class="resena-card reveal">
+          <div class="resena-stars">★★★★★</div>
+          <p class="resena-texto">"Seleccionados por la alcaldía de Cali como la mejor torta de la región. Son tortas para toda ocasión, tortas temáticas de todos los modelos que requieran, además tienen diferentes sabores y son muyyyy deliciosas. Sin duda las mejores tortas en cuanto a sabor y decoración. Torta tradicional y de muy alta calidad."</p>
+          <div class="resena-autor">
+            <div class="resena-avatar">A</div>
+            <div>
+              <strong>Ana María Salazar Rojas</strong>
+              <span>hace 4 años · Google</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="resena-card reveal">
+          <div class="resena-stars">★★★★★</div>
+          <p class="resena-texto">"Lugar para conseguir tortas exclusivas y con un sabor único en la ciudad. Exquisitas es la palabra correcta para describir estas delicias."</p>
+          <div class="resena-autor">
+            <div class="resena-avatar">L</div>
+            <div>
+              <strong>Libardo Buelvas</strong>
+              <span>hace 4 años · Google</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="resena-card reveal">
+          <div class="resena-stars">★★★★★</div>
+          <p class="resena-texto">"Las mejores tortas de Cali, sin lugar a dudas. Calidad, sabor y presentación en cada pedido. Totalmente recomendadas para cualquier celebración."</p>
+          <div class="resena-autor">
+            <div class="resena-avatar">G</div>
+            <div>
+              <strong>Gustavo Adolfo González</strong>
+              <span>hace 4 años · Google</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="resenas-cta reveal">
+        <a href="https://www.google.com/maps/place/Cra.+29a+%23+10-46,+Junin,+Cali,+Valle+del+Cauca/@3.429949,-76.532119,17z" target="_blank" rel="noopener" class="btn-secondary">Ver todas las reseñas en Google</a>
+      </div>
+    </div>
+  </section>
+
   <!-- ===== FOOTER ===== -->
   <footer class="footer">
     <div class="footer-inner">
+      <img src="images/logo.png" alt="Tortas San Diego" class="footer-logo-img" />
       <p class="footer-logo">Tortas San Diego</p>
       <p class="footer-tagline">Pastelería Artesanal · Cali, Colombia</p>
       <div class="footer-links">
@@ -435,13 +494,12 @@
       <p class="footer-copy">© 2025 Tortas San Diego · Todos los derechos reservados</p>
     </div>
   </footer>
- 
+
   <!-- WhatsApp flotante -->
   <a href="https://wa.me/573002367175?text=Hola%2C%20me%20gustar%C3%ADa%20hacer%20un%20pedido" class="whatsapp-float" target="_blank" rel="noopener" aria-label="WhatsApp">
     <svg viewBox="0 0 24 24" fill="currentColor" width="28" height="28"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.117.549 4.099 1.51 5.828L.057 23.625a.75.75 0 0 0 .918.918l5.797-1.453A11.94 11.94 0 0 0 12 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.75a9.712 9.712 0 0 1-4.953-1.357l-.355-.211-3.683.922.937-3.585-.231-.368A9.712 9.712 0 0 1 2.25 12C2.25 6.615 6.615 2.25 12 2.25S21.75 6.615 21.75 12 17.385 21.75 12 21.75z"/></svg>
   </a>
- 
+
   <script src="js/main.js"></script>
 </body>
 </html>
- 
