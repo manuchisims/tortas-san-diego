@@ -19,7 +19,10 @@
   <!-- ===== NAVBAR ===== -->
   <header class="navbar" id="navbar">
     <div class="nav-inner">
-      <a href="#inicio" class="nav-logo">Tortas San Diego</a>
+      <a href="#inicio" class="nav-logo">
+        <img src="images/logo.png" alt="Tortas San Diego" class="nav-logo-img" />
+        <span>Tortas San Diego</span>
+      </a>
       <button class="nav-toggle" id="navToggle" aria-label="Menú">
         <span></span><span></span><span></span>
       </button>
@@ -264,8 +267,6 @@
           <li>Paletas de chocolate</li>
           <li>Minipepitos con crema pastelera</li>
           <li>Bolitas de coco</li>
-          <li>Alfajores</li>
-          <li>Mazapanes de leche</li>
         </ul>
         <a href="https://wa.me/573002367175?text=Hola%2C%20me%20gustar%C3%ADa%20cotizar%20una%20mesa%20dulce" class="btn-secondary" target="_blank" rel="noopener">Cotizar mesa dulce</a>
       </div>
@@ -331,10 +332,7 @@
   <section class="section section-alt" id="nosotros">
     <div class="section-inner two-col reverse">
       <div class="col-image reveal-left">
-        <div class="gallery-placeholder tall">
-          <span>Foto del local / equipo</span>
-          <small>Sube tu foto aquí</small>
-        </div>
+        <img src="images/nosotros.jpg" alt="Tortas San Diego - Nuestra historia" class="img-rounded" />
       </div>
       <div class="col-text reveal-right">
         <p class="section-eyebrow">Nuestra Historia</p>
@@ -409,7 +407,7 @@
 
         <div class="map-container reveal-right">
           <iframe
-            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3982.5!2d-76.534!3d3.4516!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zM8KwMjcnMDUuOCJOIDc2wrAzMicwMi40Ilc!5e0!3m2!1ses!2sco!4v1234567890"
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3982.5!2d-76.532119!3d3.429949!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8e30a6915cdd750b%3A0x4f28d3e542409360!2sCra.+29a+%23+10-46%2C+Junin%2C+Cali%2C+Valle+del+Cauca!5e0!3m2!1ses!2sco!4v1234567890"
             width="100%"
             height="400"
             style="border:0;"
@@ -423,15 +421,72 @@
     </div>
   </section>
 
+  <!-- ===== RESEÑAS ===== -->
+  <section class="section section-alt" id="resenas">
+    <div class="section-inner">
+      <p class="section-eyebrow reveal">Lo que dicen nuestros clientes</p>
+      <h2 class="section-title reveal">Reseñas de Google</h2>
+      <div class="rating-summary reveal">
+        <span class="rating-score">5.0</span>
+        <div class="rating-stars">★★★★★</div>
+        <span class="rating-count">Excelente · 42 reseñas en Google</span>
+      </div>
+
+      <div class="resenas-grid">
+        <div class="resena-card reveal">
+          <div class="resena-stars">★★★★★</div>
+          <p class="resena-texto">"Seleccionados por la alcaldía de Cali como la mejor torta de la región. Son tortas para toda ocasión, tortas temáticas de todos los modelos que requieran, además tienen diferentes sabores y son muyyyy deliciosas. Sin duda las mejores tortas en cuanto a sabor y decoración. Torta tradicional y de muy alta calidad."</p>
+          <div class="resena-autor">
+            <div class="resena-avatar">A</div>
+            <div>
+              <strong>Ana María Salazar Rojas</strong>
+              <span>hace 4 años · Google</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="resena-card reveal">
+          <div class="resena-stars">★★★★★</div>
+          <p class="resena-texto">"Lugar para conseguir tortas exclusivas y con un sabor único en la ciudad. Exquisitas es la palabra correcta para describir estas delicias."</p>
+          <div class="resena-autor">
+            <div class="resena-avatar">L</div>
+            <div>
+              <strong>Libardo Buelvas</strong>
+              <span>hace 4 años · Google</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="resena-card reveal">
+          <div class="resena-stars">★★★★★</div>
+          <p class="resena-texto">"Las mejores tortas de Cali, sin lugar a dudas. Calidad, sabor y presentación en cada pedido. Totalmente recomendadas para cualquier celebración."</p>
+          <div class="resena-autor">
+            <div class="resena-avatar">G</div>
+            <div>
+              <strong>Gustavo Adolfo González</strong>
+              <span>hace 4 años · Google</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="resenas-cta reveal">
+        <a href="https://www.google.com/maps/place/Cra.+29a+%23+10-46,+Junin,+Cali,+Valle+del+Cauca/@3.429949,-76.532119,17z" target="_blank" rel="noopener" class="btn-secondary">Ver todas las reseñas en Google</a>
+      </div>
+    </div>
+  </section>
+
   <!-- ===== FOOTER ===== -->
   <footer class="footer">
     <div class="footer-inner">
+      <img src="images/logo.png" alt="Tortas San Diego" class="footer-logo-img" />
       <p class="footer-logo">Tortas San Diego</p>
       <p class="footer-tagline">Pastelería Artesanal · Cali, Colombia</p>
       <div class="footer-links">
         <a href="#inicio">Inicio</a>
-        <a href="#galeria">Galería</a>
+        <a href="#mesas-dulces">Mesas Dulces</a>
         <a href="#sabores">Sabores</a>
+        <a href="#nosotros">Nosotros</a>
         <a href="#contacto">Contacto</a>
       </div>
       <p class="footer-copy">© 2025 Tortas San Diego · Todos los derechos reservados</p>
