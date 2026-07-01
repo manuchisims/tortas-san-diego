@@ -19,11 +19,11 @@
 /* BREADCRUMB */
 .breadcrumb {
   font-size: 0.8rem;
-  color: rgba(255,255,255,0.7);
+  color: rgba(255,255,255,1);
   margin-bottom: 16px;
   letter-spacing: 0.04em;
 }
-.breadcrumb a { color: rgba(255,255,255,0.7); }
+.breadcrumb a { color: rgba(255,255,255,1); }
 .breadcrumb a:hover { color: #fff; }
 .breadcrumb span { margin: 0 6px; }
 
