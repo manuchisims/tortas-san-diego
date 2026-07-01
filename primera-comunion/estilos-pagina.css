@@ -6,8 +6,8 @@
   --carbon: #2C2C2C;
   --blanco: #FEFCFA;
   --gris-suave: #E8E3DC;
-  --texto: #3D3530;
-  --texto-suave: #7A6E65;
+  --texto: #14110F;       /* Casi negro puro, muy legible */
+  --texto-suave: #403A35; /* Gris oscuro cálido */
   --font-display: 'Cormorant Garamond', Georgia, serif;
   --font-body: 'Jost', system-ui, sans-serif;
   --radius-lg: 12px;
@@ -35,7 +35,7 @@
   justify-content: center;
   text-align: center;
   padding: 120px 24px 64px;
-  background: linear-gradient(160deg, rgba(0,0,0,0.6) 0%, rgba(0,0,0,0.4) 100%),
+  background: linear-gradient(160deg, rgba(0,0,0,0.7) 0%, rgba(0,0,0,0.7) 100%),
               url('../images/galeria/jovenes/primera-comunion/primera-comunion-01.webp') center/cover no-repeat;
   position: relative;
 }
