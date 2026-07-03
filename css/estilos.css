@@ -586,16 +586,7 @@ a { color: inherit; text-decoration: none; }
   border-radius: var(--radius-lg);
   box-shadow: var(--shadow);
 }
-  height: 280px;
-  background: linear-gradient(135deg, var(--gris-suave), var(--perla));
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  gap: 8px;
-  border-radius: var(--radius-lg);
-  border: 1px dashed var(--habano);
-}
+ 
 .gallery-placeholder.tall { height: 420px; }
 .gallery-placeholder span {
   font-family: var(--font-display);
