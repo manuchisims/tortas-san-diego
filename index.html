@@ -75,24 +75,43 @@
   }
   </script>
 
-  <!-- Google Analytics GA4 (diferido para no bloquear renderizado) -->
+  <!-- Google Analytics GA4 (diferido hasta la primera interacción para no consumir JS/hilo principal antes de tiempo) -->
   <script>
-    window.addEventListener('load', function() {
-      var s = document.createElement('script');
-      s.src = 'https://www.googletagmanager.com/gtag/js?id=G-3YB4SYCR1R';
-      s.async = true;
-      document.head.appendChild(s);
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
-      gtag('config', 'G-3YB4SYCR1R');
-    });
+    (function() {
+      var gtmLoaded = false;
+      function loadGTM() {
+        if (gtmLoaded) return;
+        gtmLoaded = true;
+        var s = document.createElement('script');
+        s.src = 'https://www.googletagmanager.com/gtag/js?id=G-3YB4SYCR1R';
+        s.async = true;
+        document.head.appendChild(s);
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        window.gtag = gtag;
+        gtag('js', new Date());
+        gtag('config', 'G-3YB4SYCR1R');
+      }
+      ['scroll','click','keydown','touchstart','mousemove'].forEach(function(evt) {
+        window.addEventListener(evt, loadGTM, { passive: true, once: true });
+      });
+      // Fallback: si no hay interacción, cargar igual 5s después de que termine de cargar la página
+      window.addEventListener('load', function() {
+        setTimeout(loadGTM, 5000);
+      });
+    })();
   </script>
+
+  <!-- Preconnect a orígenes de terceros usados en la página -->
+  <link rel="preconnect" href="https://www.googletagmanager.com" crossorigin>
+  <link rel="dns-prefetch" href="https://www.googletagmanager.com">
+  <link rel="preconnect" href="https://static.cloudflareinsights.com" crossorigin>
+  <link rel="dns-prefetch" href="https://static.cloudflareinsights.com">
 
   <!-- Preload fuentes críticas -->
   <link rel="preload" href="fonts/CormorantGaramond.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="preload" href="fonts/Jost.woff2" as="font" type="font/woff2" crossorigin>
-  <link rel="preload" href="images/fondo-1.webp" as="image">
+  <link rel="preload" href="images/fondo-1.webp" as="image" fetchpriority="high">
 
   <!-- CSS crítico inline -->
   <style>*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}html{scroll-behavior:smooth;font-size:16px}body{font-family:'Jost',system-ui,sans-serif;color:#3D3530;background:#F5F1EC;background-image:url('images/fondo-de-pagina-01b.webp');background-repeat:repeat;background-size:480px;background-attachment:fixed;line-height:1.7;-webkit-font-smoothing:antialiased}img{max-width:100%;display:block}a{color:inherit;text-decoration:none}.navbar{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(254,252,250,0.92);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);border-bottom:1px solid #E8E3DC;transition:box-shadow .35s}.navbar.scrolled{box-shadow:0 2px 20px rgba(44,44,44,.1)}.nav-inner{max-width:1100px;margin:0 auto;padding:0 24px;height:68px;display:flex;align-items:center;justify-content:space-between}.nav-logo{display:flex;align-items:center;gap:10px;font-family:'Cormorant Garamond',Georgia,serif;font-size:1.35rem;font-weight:600;letter-spacing:.02em;color:#2C2C2C}.nav-logo-img{width:36px;height:36px;object-fit:contain}.nav-links{display:flex;gap:32px}.nav-links a{font-size:.82rem;font-weight:400;letter-spacing:.1em;text-transform:uppercase;color:#7A6E65;transition:color .35s;position:relative}.nav-links a:hover{color:#2C2C2C}.nav-toggle{display:none;flex-direction:column;gap:5px;background:none;border:none;cursor:pointer;padding:4px}.nav-toggle span{display:block;width:24px;height:2px;background:#2C2C2C}.hero{min-height:100vh;display:flex;align-items:center;justify-content:center;position:relative;overflow:hidden;padding:100px 24px 60px;text-align:center}.hero-slider{position:absolute;inset:0;z-index:0}.hero-slide{position:absolute;inset:0;background-size:cover;background-position:center;opacity:0;transition:opacity 1.2s ease}.hero-slide.active{opacity:1}.hero-overlay{position:absolute;inset:0;z-index:1;background:rgba(0,0,0,.45)}.hero-content{position:relative;z-index:2;max-width:680px}.hero-eyebrow{font-size:.75rem;letter-spacing:.2em;text-transform:uppercase;color:rgba(255,255,255,.85);margin-bottom:20px;font-weight:400}.hero-title{font-family:'Cormorant Garamond',Georgia,serif;font-size:clamp(3.5rem,8vw,7rem);font-weight:300;line-height:1;color:#fff;letter-spacing:-.01em;margin-bottom:24px}.hero-title em{font-style:italic;color:#C4A882}.hero-sub{font-size:1.05rem;color:rgba(255,255,255,.8);max-width:420px;margin:0 auto 40px;font-weight:300}.btn-whatsapp{display:inline-flex;align-items:center;gap:10px;background:#25D366;color:#fff;font-size:.9rem;font-weight:500;letter-spacing:.04em;padding:14px 28px;border-radius:50px;box-shadow:0 4px 20px rgba(37,211,102,.3)}.hero-dots{position:absolute;bottom:60px;left:50%;transform:translateX(-50%);display:flex;gap:10px;z-index:3}.hero-dot{width:8px;height:8px;border-radius:50%;border:1px solid #C4A882;background:transparent;cursor:pointer;padding:0}.hero-dot.active{background:#C4A882}.hero-scroll-hint{position:absolute;bottom:32px;left:50%;transform:translateX(-50%);font-size:1.2rem;color:#C4A882;animation:bounce 2s ease-in-out infinite;z-index:3}@keyframes bounce{0%,100%{transform:translateX(-50%) translateY(0)}50%{transform:translateX(-50%) translateY(8px)}}.reveal,.reveal-left,.reveal-right{opacity:0;transition:opacity .7s ease,transform .7s ease}.reveal{transform:translateY(28px)}.reveal-left{transform:translateX(-36px)}.reveal-right{transform:translateX(36px)}.reveal.visible,.reveal-left.visible,.reveal-right.visible{opacity:1;transform:none}@media(max-width:680px){.nav-links{display:none;position:absolute;top:68px;left:0;right:0;background:rgba(254,252,250,.97);flex-direction:column;padding:24px;gap:20px;border-bottom:1px solid #E8E3DC;box-shadow:0 8px 24px rgba(0,0,0,.08)}.nav-links.open{display:flex}.nav-toggle{display:flex}}</style>
@@ -178,7 +197,7 @@
     <div class="categorias-grid">
 
       <a href="/aniversarios/" class="categoria-card">
-        <img src="images/galeria/adultos/aniversarios/aniversarios-04.webp" alt="Tortas de aniversario">
+        <img src="images/galeria/adultos/aniversarios/aniversarios-04.webp" alt="Tortas de aniversario" loading="lazy" decoding="async">
         <div class="categoria-info">
           <h3>Aniversario</h3>
           <p>Celebraciones llenas de amor y elegancia.</p>
@@ -186,7 +205,7 @@
       </a>
 
       <a href="/bautizo-y-baby-shower/" class="categoria-card">
-        <img src="images/galeria/jovenes/baby-shower/baby-shower-34.webp" alt="Tortas para baby shower">
+        <img src="images/galeria/jovenes/baby-shower/baby-shower-34.webp" alt="Tortas para baby shower" loading="lazy" decoding="async">
         <div class="categoria-info">
           <h3>Baby Shower</h3>
           <p>Diseños tiernos para recibir una nueva vida.</p>
@@ -194,7 +213,7 @@
       </a>
 
       <a href="/cumple/" class="categoria-card">
-        <img src="images/galeria/adultos/cumple/chocolate/chocolate-01.webp" alt="Tortas de cumpleaños">
+        <img src="images/galeria/adultos/cumple/chocolate/chocolate-01.webp" alt="Tortas de cumpleaños" loading="lazy" decoding="async">
         <div class="categoria-info">
           <h3>Cumpleaños</h3>
           <p>Para niños, jóvenes y adultos.</p>
@@ -202,7 +221,7 @@
       </a>
 
       <a href="/empresariales/" class="categoria-card">
-        <img src="images/galeria/adultos/empresariales/empresariales-01.webp" alt="Tortas empresariales">
+        <img src="images/galeria/adultos/empresariales/empresariales-01.webp" alt="Tortas empresariales" loading="lazy" decoding="async">
         <div class="categoria-info">
           <h3>Empresariales</h3>
           <p>Eventos corporativos y celebraciones de empresa.</p>
@@ -210,7 +229,7 @@
       </a>
 
       <a href="/festividades/" class="categoria-card">
-        <img src="images/galeria/festividades/navidad-02.webp" alt="Tortas para festividades">
+        <img src="images/galeria/festividades/navidad-02.webp" alt="Tortas para festividades" loading="lazy" decoding="async">
         <div class="categoria-info">
           <h3>Festividades</h3>
           <p>Navidad, Halloween y fechas especiales.</p>
@@ -218,7 +237,7 @@
       </a>
 
       <a href="/grado/" class="categoria-card">
-        <img src="images/galeria/adultos/grados/grados-02.webp" alt="Tortas de grado">
+        <img src="images/galeria/adultos/grados/grados-02.webp" alt="Tortas de grado" loading="lazy" decoding="async">
         <div class="categoria-info">
           <h3>Grado</h3>
           <p>Celebra cada logro con una torta inolvidable.</p>
@@ -226,7 +245,7 @@
       </a>
 
       <a href="/infantiles/" class="categoria-card">
-        <img src="images/galeria/jovenes/infantiles/cultura-pop/cultura-pop-14.webp" alt="Tortas infantiles">
+        <img src="images/galeria/jovenes/infantiles/cultura-pop/cultura-pop-14.webp" alt="Tortas infantiles" loading="lazy" decoding="async">
         <div class="categoria-info">
           <h3>Infantiles</h3>
           <p>Color, diversión y personajes favoritos.</p>
@@ -234,7 +253,7 @@
       </a>
 
       <a href="/matrimonio/" class="categoria-card">
-        <img src="images/galeria/adultos/matrimonio/matrimonio-01.webp" alt="Tortas de matrimonio">
+        <img src="images/galeria/adultos/matrimonio/matrimonio-01.webp" alt="Tortas de matrimonio" loading="lazy" decoding="async">
         <div class="categoria-info">
           <h3>Matrimonio</h3>
           <p>Elegancia para uno de los días más importantes.</p>
@@ -242,7 +261,7 @@
       </a>
 
       <a href="/primera-comunion/" class="categoria-card">
-        <img src="images/galeria/jovenes/primera-comunion/primera-comunion-21.webp" alt="Tortas de primera comunión">
+        <img src="images/galeria/jovenes/primera-comunion/primera-comunion-21.webp" alt="Tortas de primera comunión" loading="lazy" decoding="async">
         <div class="categoria-info">
           <h3>Primera Comunión</h3>
           <p>Diseños delicados para una celebración especial.</p>
@@ -250,7 +269,7 @@
       </a>
 
       <a href="/quinceanos/" class="categoria-card">
-        <img src="images/galeria/jovenes/quinceanos/quince-01.webp" alt="Tortas de quince años">
+        <img src="images/galeria/jovenes/quinceanos/quince-01.webp" alt="Tortas de quince años" loading="lazy" decoding="async">
         <div class="categoria-info">
           <h3>Quince Años</h3>
           <p>Diseños elegantes y completamente personalizados.</p>
@@ -258,7 +277,7 @@
       </a>
 
       <a href="/tematicas/" class="categoria-card">
-        <img src="images/galeria/tematicas/tematicas-01.webp" alt="Tortas temáticas">
+        <img src="images/galeria/tematicas/tematicas-01.webp" alt="Tortas temáticas" loading="lazy" decoding="async">
         <div class="categoria-info">
           <h3>Temáticas</h3>
           <p>Inspiradas en películas, series, videojuegos y más.</p>
@@ -291,7 +310,7 @@
         <a href="https://wa.me/573002367175?text=Hola%2C%20me%20gustar%C3%ADa%20cotizar%20una%20mesa%20dulce" class="btn-secondary" target="_blank" rel="noopener">Cotizar mesa dulce</a>
       </div>
       <div class="col-image reveal-right">
-        <img src="images/mesas-dulces.webp" alt="Mesa dulce Tortas San Diego Cali" class="img-rounded" />
+        <img src="images/mesas-dulces.webp" alt="Mesa dulce Tortas San Diego Cali" class="img-rounded" loading="lazy" decoding="async" />
       </div>
     </div>
   </section>
@@ -351,7 +370,7 @@
   <section class="section" id="decoracion">
     <div class="section-inner two-col">
       <div class="col-image reveal-left">
-        <img src="images/decorada.webp" alt="Decoración profesional de tortas Tortas San Diego Cali" class="img-rounded" />
+        <img src="images/decorada.webp" alt="Decoración profesional de tortas Tortas San Diego Cali" class="img-rounded" loading="lazy" decoding="async" />
       </div>
       <div class="col-text reveal-right">
         <p class="section-eyebrow">Servicio Especializado</p>
@@ -377,7 +396,7 @@
   <section class="section section-alt" id="nosotros">
     <div class="section-inner two-col reverse">
       <div class="col-image reveal-left">
-        <img src="images/nosotros.webp" alt="Tortas San Diego - Nuestra historia en Cali" class="img-rounded" />
+        <img src="images/nosotros.webp" alt="Tortas San Diego - Nuestra historia en Cali" class="img-rounded" loading="lazy" decoding="async" />
       </div>
       <div class="col-text reveal-right">
         <p class="section-eyebrow">Nuestra Historia</p>
