@@ -167,15 +167,65 @@
     navLinks.querySelectorAll('a').forEach(l => l.addEventListener('click', () => navLinks.classList.remove('open')));
 
     const grid = document.getElementById('galeriaBautizo');
-    for (let i = 1; i <= 36; i++) {
-      const num = String(i).padStart(2, '0');
-      const src = `../images/galeria/jovenes/baby-shower/baby-shower-${num}.webp`;
-      const div = document.createElement('div');
-      div.className = 'pag-gallery-item';
-      div.innerHTML = `<img src="${src}" alt="Torta de bautizo y baby shower en Cali ${i}" loading="${i <= 8 ? 'eager' : 'lazy'}" style="cursor:zoom-in" />`;
-      grid.appendChild(div);
-    }
 
+const alts = [
+  "Torta de bautizo para niña en Cali",
+  "Torta de bautizo para niño en Cali",
+  "Torta para baby shower con osito",
+  "Torta baby shower en tonos pastel",
+  "Torta de bautizo elegante",
+  "Torta para revelación de género",
+  "Pastel de baby shower personalizado",
+  "Torta de bautizo con cruz",
+  "Torta para bautizo con ángel",
+  "Torta baby shower con globos",
+  "Torta de bautizo con flores",
+  "Pastel para baby shower en Cali",
+  "Torta de bautizo minimalista",
+  "Torta baby shower para niño",
+  "Torta baby shower para niña",
+  "Pastel con decoración de bebé",
+  "Torta bautizo con detalles dorados",
+  "Torta para celebración de bautizo",
+  "Pastel baby shower con nube",
+  "Torta de bautizo artesanal",
+  "Torta baby shower con osita",
+  "Pastel para bienvenida del bebé",
+  "Torta bautizo personalizada",
+  "Torta para bautizo de niña",
+  "Torta para bautizo de niño",
+  "Pastel elegante para baby shower",
+  "Torta de bautizo moderna",
+  "Torta baby shower con elefante",
+  "Pastel de bautizo con perlas",
+  "Torta baby shower con estrellas",
+  "Torta para bautizo con detalles blancos",
+  "Pastel artesanal para bautizo",
+  "Torta baby shower en colores suaves",
+  "Torta bautizo con decoración delicada",
+  "Pastel para celebración de nacimiento",
+  "Torta de bautizo y baby shower en Cali"
+];
+
+for (let i = 1; i <= 36; i++) {
+  const num = String(i).padStart(2, '0');
+  const src = `../images/galeria/jovenes/baby-shower/baby-shower-${num}.webp`;
+
+  const div = document.createElement('div');
+  div.className = 'pag-gallery-item';
+
+  div.innerHTML = `
+    <img
+      src="${src}"
+      alt="${alts[i-1]}"
+      loading="${i <= 8 ? 'eager' : 'lazy'}"
+      style="cursor:zoom-in"
+    />
+  `;
+
+  grid.appendChild(div);
+}
+     
     const lightbox = document.getElementById('lightbox');
     const lightboxImg = document.getElementById('lightboxImg');
     let currentIdx = 0;
