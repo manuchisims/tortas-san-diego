@@ -171,14 +171,47 @@
 
     const grid = document.getElementById('galeriaChocolate');
     // Bucle para las 15 imágenes
-    for (let i = 1; i <= 23; i++) {
-      const num = String(i).padStart(2, '0');
-      const src = `../../images/galeria/adultos/cumple/chocolate/chocolate-${num}.webp`;
-      const div = document.createElement('div');
-      div.className = 'pag-gallery-item';
-      div.innerHTML = `<img src="${src}" alt="Torta chorreada y chocolates Cali ${i}" loading="${i <= 4 ? 'eager' : 'lazy'}" style="cursor:zoom-in" />`;
-      grid.appendChild(div);
-    }
+   // Bucle para las 23 imágenes de tortas chorreadas con dorado y flores
+const alts = [
+  "Torta chorreada decorada con chocolates y detalles en dorado",
+  "Pastel estilo drip cake con acabados en oro y flores frescas",
+  "Torta personalizada con goteo de chocolate",
+  "Diseño elegante de torta chorreada",
+  "Pastel de cumpleaños con cobertura chorreada y toques de oro",
+  "Torta fina con decoración en flores en azúcar y detalles dorados",
+  "Torta moderna con estilo drip, detalles en hoja de oro y flores frescas",
+  "Pastel decorado con chocolates y macarons",
+  "Torta chorreada de chocolate con suspiros azules",
+  "Diseño de torta con flores naturales para eventos",
+  "Torta de cumpleaños estilo chorreada con azules",
+  "Pastel elegante con detalles dorados y estilo drip",
+  "Torta personalizada con flores naturales frescas y macarons",
+  "Torta chorreada con combinación de chocolates y toques dorados",
+  "Diseño de torta exclusiva con flores naturales y destellos dorados",
+  "Pastel estilo drip cake con flores naturales y adornos dorados",
+  "Torta decorativa con ramillete de flores naturales y detalles en oro",
+  "Torta chorreada con delicadas flores naturales y acabados en dorado",
+  "Pastel festivo con estilo chorreado y cremas rosadas",
+  "Torta de pastelería con flores naturales y acentos dorados en Cali",
+  "Torta personalizada estilo drip con flores naturales y detalles dorados",
+  "Pastel elegante con cobertura chorreada, flores naturales y toques de oro",
+  "Torta de diseño con flores naturales y detalles dorados para celebraciones"
+];
+
+for (let i = 1; i <= 23; i++) {
+  const num = String(i).padStart(2, '0');
+  const src = `../../images/galeria/adultos/cumple/chocolate/chocolate-${num}.webp`;
+  const div = document.createElement('div');
+  div.className = 'pag-gallery-item';
+  div.innerHTML = `
+    <img 
+      src="${src}" 
+      alt="${alts[i-1]}" 
+      loading="${i <= 4 ? 'eager' : 'lazy'}" 
+      style="cursor:zoom-in" 
+    />`;
+  grid.appendChild(div);
+}
 
     const lightbox = document.getElementById('lightbox');
     const lightboxImg = document.getElementById('lightboxImg');
