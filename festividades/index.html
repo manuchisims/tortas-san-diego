@@ -181,32 +181,86 @@
     navToggle.addEventListener('click', () => navLinks.classList.toggle('open'));
     navLinks.querySelectorAll('a').forEach(l => l.addEventListener('click', () => navLinks.classList.remove('open')));
 
-    // 1. NAVIDAD
-    const gridNavidad = document.getElementById('galeriaNavidad');
-    for (let i = 1; i <= 9; i++) {
-      const num = String(i).padStart(2, '0');
-      const div = document.createElement('div'); div.className = 'pag-gallery-item';
-      div.innerHTML = `<img src="../images/galeria/festividades/navidad-${num}.webp" alt="Torta de Navidad Cali ${i}" loading="${i <= 4 ? 'eager' : 'lazy'}" style="cursor:zoom-in" />`;
-      gridNavidad.appendChild(div);
-    }
+   // 1. NAVIDAD
+const gridNavidad = document.getElementById('galeriaNavidad');
 
-    // 2. HALLOWEEN
-    const gridHalloween = document.getElementById('galeriaHalloween');
-    for (let i = 1; i <= 5; i++) {
-      const num = String(i).padStart(2, '0');
-      const div = document.createElement('div'); div.className = 'pag-gallery-item';
-      div.innerHTML = `<img src="../images/galeria/festividades/halloween-${num}.webp" alt="Torta de Halloween Cali ${i}" loading="lazy" style="cursor:zoom-in" />`;
-      gridHalloween.appendChild(div);
-    }
+const altsNavidad = [
+  "Torta de Navidad con diseño de taza",
+  "Pastel navideño decorado en Cali",
+  "Torta de Navidad con árbol y esferas",
+  "Torta navideña elegante con árbol",
+  "Pastel tradicional para cena de Navidad",
+  "Torta de navidad personalizada",
+  "Torta de fin de año y Navidad en Cali",
+  "Pastel con decoración de navidad dorada",
+  "Torta navideña artesanal con chimenea"
+];
 
-    // 3. MADRES
-    const gridMadres = document.getElementById('galeriaMadres');
-    for (let i = 1; i <= 7; i++) {
-      const num = String(i).padStart(2, '0');
-      const div = document.createElement('div'); div.className = 'pag-gallery-item';
-      div.innerHTML = `<img src="../images/galeria/festividades/madres-${num}.webp" alt="Torta Día de las Madres Cali ${i}" loading="lazy" style="cursor:zoom-in" />`;
-      gridMadres.appendChild(div);
-    }
+for (let i = 1; i <= 9; i++) {
+  const num = String(i).padStart(2, '0');
+  const div = document.createElement('div'); 
+  div.className = 'pag-gallery-item';
+  div.innerHTML = `
+    <img 
+      src="../images/galeria/festividades/navidad-${num}.webp" 
+      alt="${altsNavidad[i-1]}" 
+      loading="${i <= 4 ? 'eager' : 'lazy'}" 
+      style="cursor:zoom-in" 
+    />`;
+  gridNavidad.appendChild(div);
+}
+
+// 2. HALLOWEEN
+const gridHalloween = document.getElementById('galeriaHalloween');
+
+const altsHalloween = [
+  "Torta de Halloween con calabazas y fantasmas",
+  "Pastel temático de terror para Halloween en Cali",
+  "Torta de Halloween divertida con fantasmas",
+  "Torta de calabaza personalizada para Halloween",
+  "Pastel de Halloween con detalles espeluznantes"
+];
+
+for (let i = 1; i <= 5; i++) {
+  const num = String(i).padStart(2, '0');
+  const div = document.createElement('div'); 
+  div.className = 'pag-gallery-item';
+  div.innerHTML = `
+    <img 
+      src="../images/galeria/festividades/halloween-${num}.webp" 
+      alt="${altsHalloween[i-1]}" 
+      loading="lazy" 
+      style="cursor:zoom-in" 
+    />`;
+  gridHalloween.appendChild(div);
+}
+
+// 3. MADRES
+const gridMadres = document.getElementById('galeriaMadres');
+
+const altsMadres = [
+  "Torta Día de las Madres con flores",
+  "Pastel personalizado para mamá en Cali",
+  "Torta elegante para el Día de la Madre",
+  "Torta de madres con decoración floral delicada",
+  "Pastel de celebración para el Día de las Madres",
+  "Torta para mamá con detalles de rosas de azúcar",
+  "Pastel artesanal para regalar en el Día de la Madre"
+];
+
+for (let i = 1; i <= 7; i++) {
+  const num = String(i).padStart(2, '0');
+  const div = document.createElement('div'); 
+  div.className = 'pag-gallery-item';
+  div.innerHTML = `
+    <img 
+      src="../images/galeria/festividades/madres-${num}.webp" 
+      alt="${altsMadres[i-1]}" 
+      loading="lazy" 
+      style="cursor:zoom-in" 
+    />`;
+  gridMadres.appendChild(div);
+}
 
     // LIGHTBOX GLOBAL PARA LA SECCIÓN DE GALERÍAS
     const seccionGaleria = document.getElementById('seccionGaleria');
