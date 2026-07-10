@@ -170,14 +170,47 @@
     navLinks.querySelectorAll('a').forEach(l => l.addEventListener('click', () => navLinks.classList.remove('open')));
 
     const grid = document.getElementById('galeriaMatrimonios');
-    for (let i = 1; i <= 19; i++) {
-      const num = String(i).padStart(2, '0');
-      const src = `../images/galeria/adultos/matrimonio/matrimonio-${num}.webp`;
-      const div = document.createElement('div');
-      div.className = 'pag-gallery-item';
-      div.innerHTML = `<img src="${src}" alt="Torta de matrimonio en Cali ${i}" loading="${i <= 4 ? 'eager' : 'lazy'}" style="cursor:zoom-in" />`;
-      grid.appendChild(div);
-    }
+
+const alts = [
+  "Torta de matrimonio con flores de azúcar elegantes", // 1
+  "Pastel de bodas decorado con hermosas flores de azúcar", // 2
+  "Torta de matrimonio en Cali con flores de azúcar artesanales", // 3
+  "Torta de bodas personalizada con tiernas ovejitas", // 4
+  "Torta de matrimonio con flores naturales y detalles elegantes", // 5
+  "Torta de bodas temática de la película UP de Disney", // 6
+  "Pastel de matrimonio decorado con flores naturales frescas", // 7
+  "Torta de matrimonio LGBT con diseño inclusivo y elegante", // 8
+  "Torta de bodas rústica con arreglos de flores naturales", // 9
+  "Pastel de matrimonio con cascada de flores de azúcar", // 10
+  "Torta de bodas en Cali adornada con flores naturales", // 11
+  "Pastel de matrimonio moderno con flores naturales seleccionadas", // 12
+  "Torta de matrimonio minimalista con flores naturales", // 13
+  "Torta de bodas de varios pisos con flores naturales hermosas", // 14
+  "Torta de matrimonio personalizada en colores café con blanco", // 15
+  "Pastel de bodas clásico con toques de flores naturales", // 16
+  "Torta de matrimonio romántica con flores naturales", // 17
+  "Torta de bodas creativa mitad traje de novia y mitad traje formal de hombre", // 18
+  "Pastel de matrimonio artesanal con detalles de flores naturales" // 19
+];
+
+for (let i = 1; i <= 19; i++) {
+  const num = String(i).padStart(2, '0');
+  const src = `../images/galeria/adultos/matrimonio/matrimonio-${num}.webp`;
+
+  const div = document.createElement('div');
+  div.className = 'pag-gallery-item';
+
+  div.innerHTML = `
+    <img
+      src="${src}"
+      alt="${alts[i-1]}"
+      loading="${i <= 4 ? 'eager' : 'lazy'}"
+      style="cursor:zoom-in"
+    />
+  `;
+
+  grid.appendChild(div);
+}
 
     const lightbox = document.getElementById('lightbox');
     const lightboxImg = document.getElementById('lightboxImg');
