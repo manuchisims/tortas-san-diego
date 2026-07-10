@@ -171,15 +171,45 @@
 
     const grid = document.getElementById('galeriaTrabajos');
     // Bucle para las 21 imágenes
-    for (let i = 1; i <= 21; i++) {
-      const num = String(i).padStart(2, '0');
-      const src = `../../images/galeria/adultos/cumple/tra/trajes-transportes-${num}.webp`;
-      const div = document.createElement('div');
-      div.className = 'pag-gallery-item';
-      div.innerHTML = `<img src="${src}" alt="Torta de trajes, profesiones o transportes Cali ${i}" loading="${i <= 4 ? 'eager' : 'lazy'}" style="cursor:zoom-in" />`;
-      grid.appendChild(div);
-    }
+    // Bucle para las 21 imágenes de trajes, profesiones o transportes
+const alts = [
+  "Torta para chef o cocinero decorada con figuras de su familia en fondant", // 1
+  "Torta de costura personalizada con una máquina de coser artesanal", // 2
+  "Torta esculpida hiperrealista en forma de motor de automóvil", // 3
+  "Torta elegante en forma de vestido negro con un refinado moño plateado", // 4
+  "Torta de viaje estilo traje formal decorada con un avión en miniatura", // 5
+  "Torta en forma de traje de hombre con esferas y moño dorado", // 6
+  "Torta personalizada con figura o personaje de pie en fondant", // 7
+  "Torta de cocinera con utensilios de cocina detallados en tonos rosados", // 8
+  "Torta de herramientas para mecánica o construcción con destornilladores y tuercas", // 9
+  "Torta elegante estilo traje de etiqueta con moño negro formal", // 10
+  "Torta personalizada que incluye a una persona junto a su carro", // 11
+  "Torta temática de odontología para dentista con muelas y cepillo en azúcar", // 12
+  "Torta de costurera decorada como vestido y una pequeña máquina de coser", // 13
+  "Torta marina con un bote y una figura de persona navegando", // 14
+  "Torta para maestra o profesora de colegio con elementos escolares", // 15
+  "Torta temática para fisioterapeuta, masajista y rehabilitadora profesional", // 16
+  "Torta de barco con diseño texturizado de pliegues marinos en las paredes", // 17
+  "Torta de juez o abogacía con el mazo de la justicia y leyes en fondant", // 18
+  "Torta temática de automóvil con detalles de auto de carreras o ciudad", // 19
+  "Torta para maestra de colegio infantil con decoraciones tiernas y coloridas", // 20
+  "Torta estilo traje formal de gala decorada con pequeños gorritos negros" // 21
+];
 
+for (let i = 1; i <= 21; i++) {
+  const num = String(i).padStart(2, '0');
+  const src = `../../images/galeria/adultos/cumple/tra/trajes-transportes-${num}.webp`;
+  const div = document.createElement('div');
+  div.className = 'pag-gallery-item';
+  div.innerHTML = `
+    <img 
+      src="${src}" 
+      alt="${alts[i-1]}" 
+      loading="${i <= 4 ? 'eager' : 'lazy'}" 
+      style="cursor:zoom-in" 
+    />`;
+  grid.appendChild(div);
+}
     const lightbox = document.getElementById('lightbox');
     const lightboxImg = document.getElementById('lightboxImg');
     let currentIdx = 0;
