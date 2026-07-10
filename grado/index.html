@@ -171,15 +171,45 @@
     navLinks.querySelectorAll('a').forEach(l => l.addEventListener('click', () => navLinks.classList.remove('open')));
 
     // Generar galería 16 fotos
-    const grid = document.getElementById('galeriaGrado');
-    for (let i = 1; i <= 16; i++) {
-      const num = String(i).padStart(2, '0');
-      const src = `../images/galeria/adultos/grados/grados-${num}.webp`;
-      const div = document.createElement('div');
-      div.className = 'pag-gallery-item';
-      div.innerHTML = `<img src="${src}" alt="Torta de grado en Cali ${i}" loading="${i <= 8 ? 'eager' : 'lazy'}" style="cursor:zoom-in" />`;
-      grid.appendChild(div);
-    }
+const grid = document.getElementById('galeriaGrado');
+
+const alts = [
+  "Torta de grado para ingeniero personalizada", // Imagen 1
+  "Torta de grado elegante en Cali",
+  "Pastel de graduación universitaria moderno",
+  "Torta de grado para doctor y DJ personalizada", // Imagen 4
+  "Torta de grado de anime Koro-sensei", // Imagen 5
+  "Torta de graduación con temática de viajes", // Imagen 6
+  "Pastel de grado personalizado con birrete",
+  "Torta de grado institucional en Cali",
+  "Torta de graduación para bachiller",
+  "Pastel de grado con detalles dorados",
+  "Torta de grado para diseñadora",
+  "Pastel de graduación artesanal y elegante",
+  "Torta de grado para arquitectura",
+  "Torta de grado para abogacía con leyes", // Imagen 14
+  "Torta de grado para doctora con estetoscopio", // Imagen 15
+  "Torta de grado para educación y pedagogía" // Imagen 16
+];
+
+for (let i = 1; i <= 16; i++) {
+  const num = String(i).padStart(2, '0');
+  const src = `../images/galeria/adultos/grados/grados-${num}.webp`;
+
+  const div = document.createElement('div');
+  div.className = 'pag-gallery-item';
+
+  div.innerHTML = `
+    <img
+      src="${src}"
+      alt="${alts[i-1]}"
+      loading="${i <= 8 ? 'eager' : 'lazy'}"
+      style="cursor:zoom-in"
+    />
+  `;
+
+  grid.appendChild(div);
+}
 
     // Lightbox
     const lightbox = document.getElementById('lightbox');
