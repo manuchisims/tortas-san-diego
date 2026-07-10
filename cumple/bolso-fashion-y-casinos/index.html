@@ -171,14 +171,46 @@
 
     const grid = document.getElementById('galeriaFashion');
     // Bucle para las 23 imágenes
-    for (let i = 1; i <= 23; i++) {
-      const num = String(i).padStart(2, '0');
-      const src = `../../images/galeria/adultos/cumple/fashion/fashion-${num}.webp`;
-      const div = document.createElement('div');
-      div.className = 'pag-gallery-item';
-      div.innerHTML = `<img src="${src}" alt="Torta de fashion, bolsos o casino Cali ${i}" loading="${i <= 4 ? 'eager' : 'lazy'}" style="cursor:zoom-in" />`;
-      grid.appendChild(div);
-    }
+const alts = [
+  "Torta de cumpleaños con bolso y tacón negros de moda", // 1
+  "Torta temática de casino decorada con cartas de juego", // 2
+  "Torta de casino decorada con fichas de póker", // 3
+  "Torta festiva con temática colorida de carnaval", // 4
+  "Pastel fashion decorado con set de maquillaje en fondant", // 5
+  "Torta esculpida en forma de bolso de Louis Vuitton", // 6
+  "Torta en forma de maleta rosada de viaje con tacones negros", // 7
+  "Torta elegante con grabados sutiles y número dorado", // 8
+  "Pastel de cumpleaños decorado con hermosas flores naturales", // 9
+  "Torta fina adornada con flores de azúcar artesanales", // 10
+  "Torta de cumpleaños con flores naturales y el número 90", // 11
+  "Torta romántica en forma de corazón con flores de azúcar", // 12
+  "Torta personalizada con figuras de muñecos en fondant", // 13
+  "Torta de moda con grabado de animal print de cebra", // 14
+  "Pastel moderno con pliegues en crema y esferas plateadas", // 15
+  "Torta elegante decorada con un gran moño y número dorado", // 16
+  "Torta de casino completa con cartas y fichas de juego", // 17
+  "Torta temática de cumpleaños con bigotes negros", // 18
+  "Pastel verde menta decorado con macarons franceses", // 19
+  "Torta de cumpleaños con esferas decorativas en tonos rosados pastel", // 20
+  "Torta fashion con un refinado moño en dorado y negro", // 21
+  "Torta de maquillaje con cosméticos y rosas hechas en fondant", // 22
+  "Torta esculpida hiperrealista en forma de maleta de Louis Vuitton" // 23
+];
+
+for (let i = 1; i <= 23; i++) {
+  const num = String(i).padStart(2, '0');
+  const src = `../../images/galeria/adultos/cumple/fashion/fashion-${num}.webp`;
+  const div = document.createElement('div');
+  div.className = 'pag-gallery-item';
+  div.innerHTML = `
+    <img 
+      src="${src}" 
+      alt="${alts[i-1]}" 
+      loading="${i <= 4 ? 'eager' : 'lazy'}" 
+      style="cursor:zoom-in" 
+    />`;
+  grid.appendChild(div);
+}
 
     const lightbox = document.getElementById('lightbox');
     const lightboxImg = document.getElementById('lightboxImg');
