@@ -170,15 +170,39 @@
     navLinks.querySelectorAll('a').forEach(l => l.addEventListener('click', () => navLinks.classList.remove('open')));
 
     const grid = document.getElementById('galeriaLicor');
-    // Bucle para las 15 imágenes
-    for (let i = 1; i <= 15; i++) {
-      const num = String(i).padStart(2, '0');
-      const src = `../../images/galeria/adultos/cumple/licor/licor-${num}.webp`;
-      const div = document.createElement('div');
-      div.className = 'pag-gallery-item';
-      div.innerHTML = `<img src="${src}" alt="Torta de licor y estilo vaquero Cali ${i}" loading="${i <= 4 ? 'eager' : 'lazy'}" style="cursor:zoom-in" />`;
-      grid.appendChild(div);
-    }
+   // Bucle para las 15 imágenes
+const alts = [
+  "Torta de cerveza Corona con botellas decorativas", // 1
+  "Torta temática de cerveza Corona para cumpleaños", // 2
+  "Torta estilo vaquera decorada con botellas de cerveza", // 3
+  "Pastel de licor decorado de forma elegante con macarons", // 4
+  "Torta chorreada (drip cake) temática de cerveza Corona", // 5
+  "Torta chorreada decorada con botellas de licor", // 6
+  "Torta vaquera detallada con silla de montar en fondant", // 7
+  "Torta con botella rosada de alcohol y decoración de chocolates", // 8
+  "Torta chorreada con abundantes chocolates y dulces", // 9
+  "Torta con botellas de licor en una cubeta simulando una cama de hielos", // 10
+  "Torta de cerveza Heineken con diseño personalizado", // 11
+  "Torta temática de vaquero con detalles del viejo oeste", // 12
+  "Torta de cóctel Margarita decorada en colores fuertes y vivos", // 13
+  "Torta vaquera para mujer con detalles femeninos en Cali", // 14
+  "Pastel vaquero diseñado en hermosos tonos rosados" // 15
+];
+
+for (let i = 1; i <= 15; i++) {
+  const num = String(i).padStart(2, '0');
+  const src = `../../images/galeria/adultos/cumple/licor/licor-${num}.webp`;
+  const div = document.createElement('div');
+  div.className = 'pag-gallery-item';
+  div.innerHTML = `
+    <img 
+      src="${src}" 
+      alt="${alts[i-1]}" 
+      loading="${i <= 4 ? 'eager' : 'lazy'}" 
+      style="cursor:zoom-in" 
+    />`;
+  grid.appendChild(div);
+}
 
     const lightbox = document.getElementById('lightbox');
     const lightboxImg = document.getElementById('lightboxImg');
