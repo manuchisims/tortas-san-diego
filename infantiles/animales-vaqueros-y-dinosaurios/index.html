@@ -181,50 +181,109 @@
     navToggle.addEventListener('click', () => navLinks.classList.toggle('open'));
     navLinks.querySelectorAll('a').forEach(l => l.addEventListener('click', () => navLinks.classList.remove('open')));
 
-    // 1. ANIMALES
-    const gridAnimales = document.getElementById('galeriaAnimales');
-    for (let i = 1; i <= 12; i++) {
-      const num = String(i).padStart(2, '0');
-      const div = document.createElement('div'); div.className = 'pag-gallery-item';
-      div.innerHTML = `<img src="../../images/galeria/jovenes/infantiles/animales/animales-${num}.webp" alt="Torta infantil de animales Cali ${i}" loading="${i <= 4 ? 'eager' : 'lazy'}" style="cursor:zoom-in" />`;
-      gridAnimales.appendChild(div);
-    }
+    // 1. ANIMALES Y MASCOTAS
+const gridAnimales = document.getElementById('galeriaAnimales');
 
-    // 2. DINOSAURIOS
-    const gridDinosaurios = document.getElementById('galeriaDinosaurios');
-    for (let i = 1; i <= 6; i++) {
-      const num = String(i).padStart(2, '0');
-      const div = document.createElement('div'); div.className = 'pag-gallery-item';
-      div.innerHTML = `<img src="../../images/galeria/jovenes/infantiles/animales/dinosaurios-${num}.webp" alt="Torta infantil de dinosaurios Cali ${i}" loading="lazy" style="cursor:zoom-in" />`;
-      gridDinosaurios.appendChild(div);
-    }
+const altsAnimales = [
+  "Torta infantil con animales de la selva modelados", // 1
+  "Torta infantil con diseño de ballena y temática marina", // 2
+  "Pastel infantil con tiernos animalitos en un globo aerostático", // 3
+  "Torta de cumpleaños con decoración de animalitos en fondant", // 4
+  "Torta con ardillas sobre un tronco de árbol artesanal", // 5
+  "Torta infantil esculpida en forma de conejo", // 6
+  "Pastel de cumpleaños infantil decorado con un conejo", // 7
+  "Torta con animales de la selva en fondant en Cali", // 8
+  "Torta infantil con una osa y decoración de pliegues en crema", // 9
+  "Torta temática marina con personajes de Baby Shark", // 10
+  "Torta de cumpleaños esculpida en forma de gato", // 11
+  "Torta infantil esculpida en forma de coneja delicada" // 12
+];
 
-    // 3. GRANJAS Y VAQUEROS
-    const gridVaqueros = document.getElementById('galeriaVaqueros');
-    for (let i = 1; i <= 8; i++) {
-      const num = String(i).padStart(2, '0');
-      const div = document.createElement('div'); div.className = 'pag-gallery-item';
-      div.innerHTML = `<img src="../../images/galeria/jovenes/infantiles/animales/vaqueros-y-granjas-${num}.webp" alt="Torta infantil de vaqueros y granjas Cali ${i}" loading="lazy" style="cursor:zoom-in" />`;
-      gridVaqueros.appendChild(div);
-    }
+for (let i = 1; i <= 12; i++) {
+  const num = String(i).padStart(2, '0');
+  const div = document.createElement('div'); 
+  div.className = 'pag-gallery-item';
+  div.innerHTML = `
+    <img 
+      src="../../images/galeria/jovenes/infantiles/animales/animales-${num}.webp" 
+      alt="${altsAnimales[i-1]}" 
+      loading="${i <= 4 ? 'eager' : 'lazy'}" 
+      style="cursor:zoom-in" 
+    />`;
+  gridAnimales.appendChild(div);
+}
 
-    // LIGHTBOX GLOBAL PARA LA SECCIÓN DE GALERÍAS
-    const seccionGaleria = document.getElementById('seccionGaleria');
-    const lightbox = document.getElementById('lightbox');
-    const lightboxImg = document.getElementById('lightboxImg');
-    let currentIdx = 0;
-    
-    seccionGaleria.addEventListener('click', e => {
-      const img = e.target.closest('img');
-      if (!img) return;
-      // Toma TODAS las imágenes dentro de 'seccionGaleria' para poder navegar entre las 3 galerías sin cortes
-      const allImgs = [...seccionGaleria.querySelectorAll('img')];
-      currentIdx = allImgs.indexOf(img);
-      lightboxImg.src = img.src;
-      lightboxImg.alt = img.alt;
-      lightbox.classList.add('open');
-      document.body.style.overflow = 'hidden';
-    });
+// 2. DINOSAURIOS
+const gridDinosaurios = document.getElementById('galeriaDinosaurios');
+
+const altsDinosaurios = [
+  "Torta infantil de dinosaurio rosado con un árbol", // 1
+  "Pastel de cumpleaños con lindos dinosaurios bebés", // 2
+  "Torta infantil esculpida en forma de dinosaurio oscuro", // 3
+  "Torta divertida con un dinosaurio modelado saliendo del pastel", // 4
+  "Torta temática de Jurassic Park para fiesta infantil en Cali", // 5
+  "Torta decorada con dinosaurio y un niño salvaje en fondant" // 6
+];
+
+for (let i = 1; i <= 6; i++) {
+  const num = String(i).padStart(2, '0');
+  const div = document.createElement('div'); 
+  div.className = 'pag-gallery-item';
+  div.innerHTML = `
+    <img 
+      src="../../images/galeria/jovenes/infantiles/animales/dinosaurios-${num}.webp" 
+      alt="${altsDinosaurios[i-1]}" 
+      loading="lazy" 
+      style="cursor:zoom-in" 
+    />`;
+  gridDinosaurios.appendChild(div);
+}
+
+// 3. GRANJAS Y VAQUEROS
+const gridVaqueros = document.getElementById('galeriaVaqueros');
+
+const altsVaqueros = [
+  "Torta de la granja con figuras de cerdo y vaca", // 1
+  "Pastel de granja con textura de madera en fondant y animales", // 2
+  "Torta de granjera en tonos rosados con animales de granja", // 3
+  "Torta infantil en tono rosado con decoración de animales de granja", // 4
+  "Torta temática de vaquera con caballo en tonos rosados", // 5
+  "Gran pastel infantil de 3 pisos con temática de granja", // 6
+  "Torta vaquera de dos pisos para fiesta de cumpleaños", // 7
+  "Torta de la granja con variados animales modelados en fondant" // 8
+];
+
+for (let i = 1; i <= 8; i++) {
+  const num = String(i).padStart(2, '0');
+  const div = document.createElement('div'); 
+  div.className = 'pag-gallery-item';
+  div.innerHTML = `
+    <img 
+      src="../../images/galeria/jovenes/infantiles/animales/vaqueros-y-granjas-${num}.webp" 
+      alt="${altsVaqueros[i-1]}" 
+      loading="lazy" 
+      style="cursor:zoom-in" 
+    />`;
+  gridVaqueros.appendChild(div);
+}
+
+// LIGHTBOX GLOBAL PARA LA SECCIÓN DE GALERÍAS
+const seccionGaleria = document.getElementById('seccionGaleria');
+const lightbox = document.getElementById('lightbox');
+const lightboxImg = document.getElementById('lightboxImg');
+let currentIdx = 0;
+
+seccionGaleria.addEventListener('click', e => {
+  const img = e.target.closest('img');
+  if (!img) return;
+  // Toma TODAS las imágenes dentro de 'seccionGaleria' para poder navegar entre las 3 galerías sin cortes
+  const allImgs = [...seccionGaleria.querySelectorAll('img')];
+  currentIdx = allImgs.indexOf(img);
+  lightboxImg.src = img.src;
+  lightboxImg.alt = img.alt;
+  lightbox.classList.add('open');
+  document.body.style.overflow = 'hidden';
+});
 
     function closeLB() { lightbox.classList.remove('open'); document.body.style.overflow = ''; }
     function showLB(idx) {
