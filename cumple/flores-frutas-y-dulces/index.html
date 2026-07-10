@@ -171,14 +171,57 @@
 
     const grid = document.getElementById('galeriaDulces');
     // Bucle para las 33 imágenes
-    for (let i = 1; i <= 33; i++) {
-      const num = String(i).padStart(2, '0');
-      const src = `../../images/galeria/adultos/cumple/dulces/dulces-${num}.webp`;
-      const div = document.createElement('div');
-      div.className = 'pag-gallery-item';
-      div.innerHTML = `<img src="${src}" alt="Torta con flores, frutas o dulces Cali ${i}" loading="${i <= 4 ? 'eager' : 'lazy'}" style="cursor:zoom-in" />`;
-      grid.appendChild(div);
-    }
+    // Bucle para las 33 imágenes de tortas con flores, frutas o dulces
+const alts = [
+  "Torta de cumpleaños con flores naturales y sutiles detalles dorados", // 1
+  "Pastel elegante decorado con bombones de chocolate y oro comestible", // 2
+  "Torta fina con ramillete de flores frescas y destellos dorados", // 3
+  "Pastel con goteo de chocolate, macarons y fresas decorativas", // 4
+  "Torta de celebración adornada con flores naturales seleccionadas", // 5
+  "Torta con cascada de chocolates finos y hojillas de oro", // 6
+  "Pastel de cumpleaños con flores frescas y acabados en dorado", // 7
+  "Torta decorada con frutas frescas, chocolates y macarons en Cali", // 8
+  "Torta elegante con esferas doradas y flores naturales", // 9
+  "Pastel premium con fresas cubiertas de chocolate y detalles en oro", // 10
+  "Torta decorada con flores naturales de temporada y toque dorado", // 11
+  "Torta de chocolate artesanal con decoración floral y esferas", // 12
+  "Pastel con diseño contemporáneo de flores naturales y detalles dorados", // 13
+  "Torta con corona de chocolates variados y pinceladas de oro", // 14
+  "Torta personalizada con flores naturales y hojillas doradas", // 15
+  "Pastel sofisticado con cascada de flores frescas y oro comestible", // 16
+  "Torta de cumpleaños con bombones, chocolates y detalles en dorado", // 17
+  "Torta moderna con combinación de flores naturales y dulces finos", // 18
+  "Pastel con cobertura cremosa, detalles en oro y ramillete floral", // 19
+  "Torta decorada con macarons, flores frescas y detalles de chocolate", // 20
+  "Torta artesanal con flores naturales de tonos suaves y dorado", // 21
+  "Pastel con abundante decoración de chocolates premium en Cali", // 22
+  "Torta elegante de aniversario con flores frescas y toques de oro", // 23
+  "Torta con drip de chocolate, galletas finas y detalles dorados", // 24
+  "Pastel de alta pastelería con flores naturales y acabados dorados", // 25
+  "Torta decorada con frutas, flores naturales y bombones de chocolate", // 26
+  "Torta de diseño con esferas de chocolate, flores y destellos en oro", // 27
+  "Pastel con una delicada selección de flores naturales y detalles de oro", // 28
+  "Torta con goteo brillante, chocolates variados y toques dorados", // 29
+  "Torta de cumpleaños con combinación de flores frescas y macarons", // 30
+  "Pastel exclusivo con flores naturales y hojillas de oro decorativas", // 31
+  "Torta artesanal con decoración de fresas, chocolates y oro comestible", // 32
+  "Torta elegante con ramillete de flores naturales y acabados dorados" // 33
+];
+
+for (let i = 1; i <= 33; i++) {
+  const num = String(i).padStart(2, '0');
+  const src = `../../images/galeria/adultos/cumple/dulces/dulces-${num}.webp`;
+  const div = document.createElement('div');
+  div.className = 'pag-gallery-item';
+  div.innerHTML = `
+    <img 
+      src="${src}" 
+      alt="${alts[i-1]}" 
+      loading="${i <= 4 ? 'eager' : 'lazy'}" 
+      style="cursor:zoom-in" 
+    />`;
+  grid.appendChild(div);
+}
 
     const lightbox = document.getElementById('lightbox');
     const lightboxImg = document.getElementById('lightboxImg');
