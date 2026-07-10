@@ -169,15 +169,48 @@
     navToggle.addEventListener('click', () => navLinks.classList.toggle('open'));
     navLinks.querySelectorAll('a').forEach(l => l.addEventListener('click', () => navLinks.classList.remove('open')));
 
-    const grid = document.getElementById('galeriaQuinceanos');
-    for (let i = 1; i <= 19; i++) {
-      const num = String(i).padStart(2, '0');
-      const src = `../images/galeria/jovenes/quinceanos/quince-${num}.webp`;
-      const div = document.createElement('div');
-      div.className = 'pag-gallery-item';
-      div.innerHTML = `<img src="${src}" alt="Torta de quince años en Cali ${i}" loading="${i <= 4 ? 'eager' : 'lazy'}" style="cursor:zoom-in" />`;
-      grid.appendChild(div);
-    }
+   const grid = document.getElementById('galeriaQuinceanos');
+
+const alts = [
+  "Torta de quince años azul claro con corona", // 1
+  "Torta de 15 años chorreada con decoración de maquillaje", // 2
+  "Pastel de quince años chorreado con macarons", // 3
+  "Torta de 15 años elegante con flores naturales", // 4
+  "Torta de quince años con flores de azúcar artesanales", // 5
+  "Pastel de 15 años rojo con corona dorada", // 6
+  "Torta blanca de quince años con rosas rojas", // 7
+  "Torta de 15 años con rosas naturales exhibida en el salón", // 8
+  "Pastel en crema con detalles en dorado y naranja", // 9
+  "Torta de quince años chorreada con rosas blancas", // 10
+  "Torta de 15 años con pliegues en azul y dorado", // 11
+  "Pastel de quince años estilo princesa con corona", // 12
+  "Torta de quince años de tres pisos en color rojo", // 13
+  "Torta blanca de 15 años con flores naturales frescas", // 14
+  "Pastel chorreado con macarons y flores de decoración", // 15
+  "Torta de quince años en tonos rosado, blanco y dorado", // 16
+  "Torta de 15 años con pliegues estilo marina", // 17
+  "Pastel con chorreados dorados y flores en crema", // 18
+  "Torta de quince años con chorreado dorado y dulces de chocolate" // 19
+];
+
+for (let i = 1; i <= 19; i++) {
+  const num = String(i).padStart(2, '0');
+  const src = `../images/galeria/jovenes/quinceanos/quince-${num}.webp`;
+
+  const div = document.createElement('div');
+  div.className = 'pag-gallery-item';
+
+  div.innerHTML = `
+    <img
+      src="${src}"
+      alt="${alts[i-1]}"
+      loading="${i <= 4 ? 'eager' : 'lazy'}"
+      style="cursor:zoom-in"
+    />
+  `;
+
+  grid.appendChild(div);
+}
 
     const lightbox = document.getElementById('lightbox');
     const lightboxImg = document.getElementById('lightboxImg');
