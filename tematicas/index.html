@@ -170,14 +170,54 @@
     navLinks.querySelectorAll('a').forEach(l => l.addEventListener('click', () => navLinks.classList.remove('open')));
 
     const grid = document.getElementById('galeriaTematicas');
-    for (let i = 1; i <= 26; i++) {
-      const num = String(i).padStart(2, '0');
-      const src = `../images/galeria/tematicas/tematicas-${num}.webp`;
-      const div = document.createElement('div');
-      div.className = 'pag-gallery-item';
-      div.innerHTML = `<img src="${src}" alt="Torta temática en Cali ${i}" loading="${i <= 4 ? 'eager' : 'lazy'}" style="cursor:zoom-in" />`;
-      grid.appendChild(div);
-    }
+
+const alts = [
+  "Torta temática en forma de tetera decorada con flores", // 1
+  "Torta mística con bola de cristal y símbolos del zodiaco", // 2
+  "Torta temática de capibara relajado en una tina de madera", // 3
+  "Torta personalizada de perro acompañada de cristales", // 4
+  "Torta con figura de cocinero luciendo su traje de chef", // 5
+  "Torta temática con un dinosaurio grande detallado", // 6
+  "Torta infantil con diseño de un pequeño dinosaurio", // 7
+  "Torta hiperrealista en forma de hamburguesa", // 8
+  "Torta de Harry Potter con la snitch dorada y el sombrero seleccionador", // 9
+  "Torta esculpida en forma de mini Yoda (Grogu)", // 10
+  "Torta temática decorada con una máquina de coser", // 11
+  "Torta decorada con el mundo de Mario Bros", // 12
+  "Torta con Mario Bros saliendo de una tubería clásica", // 13
+  "Torta del mundo de Mario Bros con figuras de los personajes", // 14
+  "Torta hiperrealista con forma de mesa de billar", // 15
+  "Torta temática de heladería clásica con discos de los años 70", // 16
+  "Torta elegante con traje inspirada en Boss Baby (Un jefe en pañales)", // 17
+  "Torta temática de Bob Esponja en Fondo de Bikini", // 18
+  "Torta geométrica en forma de cubo de Rubik", // 19
+  "Torta futbolera con balón y la camiseta de Argentina", // 20
+  "Torta temática diseñada como una pista de Hot Wheels", // 21
+  "Torta con figuras realistas de serpiente e iguana en fondant", // 22
+  "Torta creativa con forma de olla a presión estilo India", // 23
+  "Torta fantástica inspirada en Alicia en el país de las maravillas", // 24
+  "Torta en forma de rosquilla gigante con Homero Simpson saliendo", // 25
+  "Torta de terror diseñada como dos zombies pegados" // 26
+];
+
+for (let i = 1; i <= 26; i++) {
+  const num = String(i).padStart(2, '0');
+  const src = `../images/galeria/tematicas/tematicas-${num}.webp`;
+
+  const div = document.createElement('div');
+  div.className = 'pag-gallery-item';
+
+  div.innerHTML = `
+    <img
+      src="${src}"
+      alt="${alts[i-1]}"
+      loading="${i <= 4 ? 'eager' : 'lazy'}"
+      style="cursor:zoom-in"
+    />
+  `;
+
+  grid.appendChild(div);
+}
 
     const lightbox = document.getElementById('lightbox');
     const lightboxImg = document.getElementById('lightboxImg');
