@@ -171,16 +171,70 @@
     navToggle.addEventListener('click', () => navLinks.classList.toggle('open'));
     navLinks.querySelectorAll('a').forEach(l => l.addEventListener('click', () => navLinks.classList.remove('open')));
 
-    // Generar galería 40 fotos
-    const grid = document.getElementById('galeriaPC');
-    for (let i = 1; i <= 40; i++) {
-      const num = String(i).padStart(2, '0');
-      const src = `../images/galeria/jovenes/primera-comunion/primera-comunion-${num}.webp`;
-      const div = document.createElement('div');
-      div.className = 'pag-gallery-item';
-      div.innerHTML = `<img src="${src}" alt="Torta de primera comunión en Cali ${i}" loading="${i <= 8 ? 'eager' : 'lazy'}" style="cursor:zoom-in" />`;
-      grid.appendChild(div);
-    }
+   // Generar galería 40 fotos
+const grid = document.getElementById('galeriaPC');
+
+const alts = [
+  "Torta de primera comunión con flores rosadas", // 1
+  "Torta de primera comunión decorada en crema de mantequilla", // 2
+  "Pastel de primera comunión con crucifijo, hostia y biblia", // 3
+  "Torta con decoración de biblia, hostia y crucifijo", // 4
+  "Torta de primera comunión para niña elegante", // 5
+  "Pastel de primera comunión con diseño delicado de niña", // 6
+  "Torta personalizada para primera comunión de niña en Cali", // 7
+  "Torta de primera comunión con cruz dorada", // 8
+  "Pastel de primera comunión con hostia y flores de azúcar", // 9
+  "Torta decorada con esferas y cruz dorada", // 10
+  "Torta de primera comunión con cruz plateada", // 11
+  "Pastel con figura de niña y detalles florales", // 12
+  "Torta de primera comunión rosada con paloma de la paz", // 13
+  "Torta de primera comunión con detalle central de hostia", // 14
+  "Pastel de primera comunión para niña con flores naturales", // 15
+  "Torta de primera comunión decorada con biblia", // 16
+  "Torta de primera comunión dorada y elegante", // 17
+  "Pastel con biblia y decoración de uvas doradas", // 18
+  "Torta de primera comunión clásica con cruz dorada", // 19
+  "Torta de primera comunión con hostia decorativa", // 20
+  "Pastel de primera comunión adornado con flores naturales", // 21
+  "Torta de primera comunión tradicional en Cali", // 22 (Completada)
+  "Torta con diseño de niña y cruz de comunión", // 23
+  "Torta de primera comunión para niño con cruz plateada", // 24
+  "Pastel de primera comunión azul decorado con macarons", // 25
+  "Torta con silueta de niña, flores y cruz", // 26
+  "Torta de primera comunión artesanal y moderna", // 27 (Completada)
+  "Pastel personalizado para celebración de primera comunión", // 28 (Completada)
+  "Torta de primera comunión con detalles blancos y elegantes", // 29 (Completada)
+  "Torta de primera comunión con diseño de iglesia y ovejas", // 30
+  "Pastel con decoración de iglesia y pastores", // 31
+  "Torta de primera comunión con sutiles detalles dorados", // 32 (Completada)
+  "Torta de primera comunión decorada con flores naturales frescas", // 33
+  "Pastel de primera comunión con flores de azúcar artesanales", // 34
+  "Torta desnuda (naked cake) de primera comunión con macarons", // 35
+  "Torta en crema con cruz dorada de primera comunión", // 36
+  "Pastel de primera comunión con diseño contemporáneo", // 37 (Completada)
+  "Torta de primera comunión en Cali con detalles religiosos", // 38 (Completada)
+  "Torta decorada para fiesta de primera comunión", // 39 (Completada)
+  "Pastel de primera comunión clásico y minimalista" // 40 (Completada)
+];
+
+for (let i = 1; i <= 40; i++) {
+  const num = String(i).padStart(2, '0');
+  const src = `../images/galeria/jovenes/primera-comunion/primera-comunion-${num}.webp`;
+
+  const div = document.createElement('div');
+  div.className = 'pag-gallery-item';
+
+  div.innerHTML = `
+    <img
+      src="${src}"
+      alt="${alts[i-1]}"
+      loading="${i <= 8 ? 'eager' : 'lazy'}"
+      style="cursor:zoom-in"
+    />
+  `;
+
+  grid.appendChild(div);
+}
 
     // Lightbox
     const lightbox = document.getElementById('lightbox');
