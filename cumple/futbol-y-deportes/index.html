@@ -171,14 +171,41 @@
 
     const grid = document.getElementById('galeriaDeportes');
     // Bucle para las 17 imágenes
-    for (let i = 1; i <= 17; i++) {
-      const num = String(i).padStart(2, '0');
-      const src = `../../images/galeria/adultos/cumple/deportes/deportes-${num}.webp`;
-      const div = document.createElement('div');
-      div.className = 'pag-gallery-item';
-      div.innerHTML = `<img src="${src}" alt="Torta de fútbol o deportes Cali ${i}" loading="${i <= 4 ? 'eager' : 'lazy'}" style="cursor:zoom-in" />`;
-      grid.appendChild(div);
-    }
+    // Bucle para las 17 imágenes de fútbol o deportes
+const alts = [
+  "Torta de fútbol inspirada en el Real Madrid con patrocinio de Fly Emirates", // 1
+  "Torta de cumpleaños del equipo América de Cali con escudo oficial", // 2
+  "Pastel temático de los Diablos Rojos del América de Cali", // 3
+  "Torta de fútbol del FC Barcelona (Barça) con colores blaugrana", // 4
+  "Torta pasional del América de Cali para celebraciones", // 5
+  "Torta temática de ciclismo con silueta de ciclista y montañas en fondant", // 6
+  "Torta personalizada del América de Cali decorada en crema", // 7
+  "Torta de baloncesto con diseño de balón de básquetbol y tenis deportivos", // 8
+  "Torta para ciclista decorada con paisajes de montañas y árboles", // 9
+  "Torta fitness de gimnasio con pesas, mancuernas y detalles de ejercicio", // 10
+  "Torta temática de tenis con raqueta, pelotas y diseño de cancha", // 11
+  "Pastel de cumpleaños con decoración para apasionados del ciclismo", // 12
+  "Torta de básquetbol con la silueta oficial de la NBA", // 13
+  "Torta con forma y textura de balón de baloncesto", // 14
+  "Torta de fútbol de la Juventus con franjas negras y blancas", // 15
+  "Torta de cumpleaños del Deportivo Cali con escudo y colores verdiblancos", // 16
+  "Torta de gimnasio personalizada con figuras de pesas y discos" // 17
+];
+
+for (let i = 1; i <= 17; i++) {
+  const num = String(i).padStart(2, '0');
+  const src = `../../images/galeria/adultos/cumple/deportes/deportes-${num}.webp`;
+  const div = document.createElement('div');
+  div.className = 'pag-gallery-item';
+  div.innerHTML = `
+    <img 
+      src="${src}" 
+      alt="${alts[i-1]}" 
+      loading="${i <= 4 ? 'eager' : 'lazy'}" 
+      style="cursor:zoom-in" 
+    />`;
+  grid.appendChild(div);
+}
 
     const lightbox = document.getElementById('lightbox');
     const lightboxImg = document.getElementById('lightboxImg');
