@@ -170,15 +170,73 @@
     navLinks.querySelectorAll('a').forEach(l => l.addEventListener('click', () => navLinks.classList.remove('open')));
 
     const grid = document.getElementById('galeriaCulturaPop');
-    // Bucle para las 44 imágenes
-    for (let i = 1; i <= 44; i++) {
-      const num = String(i).padStart(2, '0');
-      const src = `../../images/galeria/jovenes/infantiles/cultura-pop/cultura-pop-${num}.webp`;
-      const div = document.createElement('div');
-      div.className = 'pag-gallery-item';
-      div.innerHTML = `<img src="${src}" alt="Torta de cultura pop Cali ${i}" loading="${i <= 4 ? 'eager' : 'lazy'}" style="cursor:zoom-in" />`;
-      grid.appendChild(div);
-    }
+
+const alts = [
+  "Torta infantil temática de Hot Wheels con pista de carreras", // 1
+  "Torta infantil del Monstruo Comegalletas (Cookie Monster)", // 2
+  "Torta de superhéroes con el logo de Superman", // 3
+  "Torta de los Avengers con Spiderman destacado", // 4
+  "Pastel de cumpleaños con los Avengers originales", // 5
+  "Torta de Batman con el logo y silueta de la ciudad", // 6
+  "Torta infantil de los Héroes en Pijama (PJ Masks)", // 7
+  "Torta de cumpleaños con diseño de cancha de fútbol", // 8
+  "Torta de Iron Man con máscara modelada", // 9
+  "Pastel con los rostros de los Avengers y Spiderman", // 10
+  "Torta temática de Mario Bros para cumpleaños infantil", // 11
+  "Torta decorada con frutas varias y colores llamativos", // 12
+  "Torta infantil de Hello Kitty en tonos rosados", // 13
+  "Pastel de Mario Bros decorado con hongos y estrellas", // 14
+  "Torta de Mario Bros con figura saliendo de una tubería", // 15
+  "Torta del mundo de Mario Bros con figuritas de los personajes", // 16
+  "Pastel del mundo de Mario Bros sin el personaje principal", // 17
+  "Torta temática de Naruto con detalles de anime", // 18
+  "Torta infantil inspirada en Buscando a Nemo y el mundo marino", // 19
+  "Torta de Paw Patrol para niña en tonos delicados", // 20
+  "Torta de superhéroes inspirada en Flash", // 21
+  "Torta temática de Star Lord (Guardianes de la Galaxia)", // 22
+  "Pastel de cumpleaños con el escudo del Capitán América", // 23
+  "Torta temática con el Guantelete del Infinito de Thanos", // 24
+  "Torta de cumpleaños infantil decorada con un barco", // 25
+  "Pastel decorado con divertidos toppers de Bob Esponja", // 26
+  "Torta infantil de la película Cars de Disney", // 27
+  "Torta de Hot Wheels con pista y diseño de tiburón", // 28
+  "Torta de Kirby sobre un hermoso arcoíris de colores", // 29
+  "Pastel con figuras de Mario Bros sobre la torta", // 30
+  "Torta temática del videojuego Minecraft en Cali", // 31
+  "Torta de Mario Bros con figura artesanal de Mario en fondant", // 32
+  "Torta de Dragon Ball Z con el dragón Shenlong y esferas del dragón", // 33
+  "Torta del mundo de Minecraft con bloques y figuras en fondant", // 34
+  "Torta de Spiderman con diseño de telaraña clásica", // 35
+  "Torta de Spiderman con el traje negro del simbionte", // 36
+  "Torta esculpida con la forma de un auto de Cars", // 37
+  "Torta temática del videojuego Fortnite para cumpleaños", // 38
+  "Set de 3 tortas de Harry Potter con sombrero, libros y snitch dorada", // 39
+  "Torta de Harry Potter con sombrero seleccionador, libros y el libro monstruo", // 40
+  "Torta infantil de Hello Kitty decorada con crema", // 41
+  "Torta chorreada (drip cake) con temática de fútbol", // 42
+  "Torta de Harry Potter con la bufanda de Gryffindor y snitch dorada", // 43
+  "Torta de fútbol femenino con figura personalizada de niña" // 44
+];
+
+// Bucle para las 44 imágenes
+for (let i = 1; i <= 44; i++) {
+  const num = String(i).padStart(2, '0');
+  const src = `../../images/galeria/jovenes/infantiles/cultura-pop/cultura-pop-${num}.webp`;
+
+  const div = document.createElement('div');
+  div.className = 'pag-gallery-item';
+
+  div.innerHTML = `
+    <img
+      src="${src}"
+      alt="${alts[i-1]}"
+      loading="${i <= 4 ? 'eager' : 'lazy'}"
+      style="cursor:zoom-in"
+    />
+  `;
+
+  grid.appendChild(div);
+}
 
     const lightbox = document.getElementById('lightbox');
     const lightboxImg = document.getElementById('lightboxImg');
