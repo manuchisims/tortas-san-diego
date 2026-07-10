@@ -171,14 +171,41 @@
 
     const grid = document.getElementById('galeriaMundo');
     // Bucle para las 17 imágenes
-    for (let i = 1; i <= 17; i++) {
-      const num = String(i).padStart(2, '0');
-      const src = `../../images/galeria/adultos/cumple/mundo/mundo-${num}.webp`;
-      const div = document.createElement('div');
-      div.className = 'pag-gallery-item';
-      div.innerHTML = `<img src="${src}" alt="Torta de países y viajes Cali ${i}" loading="${i <= 4 ? 'eager' : 'lazy'}" style="cursor:zoom-in" />`;
-      grid.appendChild(div);
-    }
+    // Bucle para las 17 imágenes de países, viajes y pasiones
+const alts = [
+  "Torta temática de playa con palmeras y arena comestible", // 1
+  "Torta típica colombiana decorada con motivos tradicionales", // 2
+  "Torta romántica de París con la Torre Eiffel en fondant", // 3
+  "Torta de acampada con carpa de camping y fogata decorativa", // 4
+  "Pastel delicado decorado con mariposas de colores y flores", // 5
+  "Torta de playa con detalles marinos, olas de crema y sol", // 6
+  "Torta personalizada decorada con siluetas y figuras de gatos", // 7
+  "Torta temática de Cuba con detalles culturales y caribeños", // 8
+  "Pastel de cumpleaños con tierna decoración de gatos en fondant", // 9
+  "Torta mexicana festiva con colores vivos y detalles tradicionales", // 10
+  "Torta temática de gatitos jugando con ovillos de lana", // 11
+  "Torta de México decorada con mariachi, flores o elementos típicos", // 12
+  "Torta de pesca con pescador, lago simulado y peces en azúcar", // 13
+  "Torta de aventura y camping con árboles y carpa de montaña", // 14
+  "Torta elegante de París con diseño chic y la Torre Eiffel", // 15
+  "Pastel mexicano con detalles de sombreros, cactus o folclor", // 16
+  "Torta creativa en forma o temática de canasta de picnic al aire libre" // 17
+];
+
+for (let i = 1; i <= 17; i++) {
+  const num = String(i).padStart(2, '0');
+  const src = `../../images/galeria/adultos/cumple/mundo/mundo-${num}.webp`;
+  const div = document.createElement('div');
+  div.className = 'pag-gallery-item';
+  div.innerHTML = `
+    <img 
+      src="${src}" 
+      alt="${alts[i-1]}" 
+      loading="${i <= 4 ? 'eager' : 'lazy'}" 
+      style="cursor:zoom-in" 
+    />`;
+  grid.appendChild(div);
+}
 
     const lightbox = document.getElementById('lightbox');
     const lightboxImg = document.getElementById('lightboxImg');
