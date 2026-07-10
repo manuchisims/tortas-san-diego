@@ -170,15 +170,71 @@
     navLinks.querySelectorAll('a').forEach(l => l.addEventListener('click', () => navLinks.classList.remove('open')));
 
     const grid = document.getElementById('galeriaFantasia');
-    // Bucle para las 42 imágenes
-    for (let i = 1; i <= 42; i++) {
-      const num = String(i).padStart(2, '0');
-      const src = `../../images/galeria/jovenes/infantiles/princesas-disney/fantasia-${num}.webp`;
-      const div = document.createElement('div');
-      div.className = 'pag-gallery-item';
-      div.innerHTML = `<img src="${src}" alt="Torta de fantasía y princesas Cali ${i}" loading="${i <= 4 ? 'eager' : 'lazy'}" style="cursor:zoom-in" />`;
-      grid.appendChild(div);
-    }
+
+const alts = [
+  "Torta de princesa con corona plateada elegante", // 1
+  "Torta infantil temática de Mickey Mouse", // 2
+  "Pastel de princesa decorado con paletas de isomalt", // 3
+  "Torta de princesas con flores de azúcar y corona dorada", // 4
+  "Torta de Minnie Mouse con figura de muñequita", // 5
+  "Torta de Minnie Mouse decorada con orejas doradas", // 6
+  "Pastel de la Princesa Jasmine con una corona dorada", // 7
+  "Torta infantil inspirada en la película Raya de Disney", // 8
+  "Torta temática marina con colas de sirena en tres tonos", // 9
+  "Torta de La Princesita Sofía de Disney", // 10
+  "Pastel infantil con figura de sirena y decoración marina", // 11
+  "Torta decorada con chocolates y arcoíris en tonos pastel", // 12
+  "Torta de cumpleaños infantil con colas de sirena en fondant", // 13
+  "Torta de princesas con diseño de faldas y corona rosada", // 14
+  "Torta temática inspirada en la película Encanto de Disney en Cali", // 15
+  "Pastel infantil de la película Frozen de Disney", // 16
+  "Torta decorada con rosquillas y un lindo arcoíris en tonos pastel", // 17
+  "Torta infantil con tierno conejo en fondant y arcoíris rosado", // 18
+  "Torta de My Little Pony acompañada de paletas varias", // 19
+  "Pastel con hermosas flores en fondant y corona dorada", // 20
+  "Torta con retratos de las Princesas Disney en cuadros y corona dorada", // 21
+  "Torta infantil decorada con La Sirenita Ariel", // 22
+  "Pastel con coletas de sirena en combinación de tonos", // 23
+  "Torta infantil con arcoíris, sol y luna en amarillos claros", // 24
+  "Torta con un lindo unicornio y arcoíris en tonos pastel", // 25
+  "Torta chorreada (drip cake) con dulces en colores fuertes y alegres", // 26
+  "Torta de Frozen con el personaje de Olaf en un cuadro", // 27
+  "Pastel infantil de Minnie Mouse en color rosado claro", // 28
+  "Torta con muñeca LOL Surprise y detalles de celular en tonos pastel", // 29
+  "Torta infantil decorada con una muñeca con coletas", // 30
+  "Torta de Mickey Mouse diseñada en hermosos tonos azules", // 31
+  "Torta de Baby Mickey Mouse flotando entre nubes de azúcar", // 32
+  "Pastel de Minnie Mouse con faldita en colores fucsia y rosado", // 33
+  "Torta de Minnie Mouse con orejas doradas y lazo", // 34
+  "Torta decorada con delicadas flores en crema y corona dorada", // 35
+  "Pastel infantil con diseño de sirena y fondo del mar", // 36
+  "Torta de La Sirenita con una hermosa imagen impresa en azúcar", // 37
+  "Torta clásica de unicornio con detalles mágicos", // 38
+  "Pastel con unicornio y arcoíris modelados en fondant", // 39
+  "Torta de unicornio con acabados florales en crema de colores", // 40
+  "Torta con un tierno unicornio pequeño y arcoíris en colores pastel", // 41
+  "Gran torta de tres pisos con espectacular decoración de Mickey Mouse" // 42
+];
+
+// Bucle para las 42 imágenes
+for (let i = 1; i <= 42; i++) {
+  const num = String(i).padStart(2, '0');
+  const src = `../../images/galeria/jovenes/infantiles/princesas-disney/fantasia-${num}.webp`;
+
+  const div = document.createElement('div');
+  div.className = 'pag-gallery-item';
+
+  div.innerHTML = `
+    <img
+      src="${src}"
+      alt="${alts[i-1]}"
+      loading="${i <= 4 ? 'eager' : 'lazy'}"
+      style="cursor:zoom-in"
+    />
+  `;
+
+  grid.appendChild(div);
+}
 
     const lightbox = document.getElementById('lightbox');
     const lightboxImg = document.getElementById('lightboxImg');
