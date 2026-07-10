@@ -168,14 +168,42 @@
     navLinks.querySelectorAll('a').forEach(l => l.addEventListener('click', () => navLinks.classList.remove('open')));
 
     const grid = document.getElementById('galeriaEmpresariales');
-    for (let i = 1; i <= 14; i++) {
-      const num = String(i).padStart(2, '0');
-      const src = `../images/galeria/adultos/empresariales/empresariales-${num}.webp`;
-      const div = document.createElement('div');
-      div.className = 'pag-gallery-item';
-      div.innerHTML = `<img src="${src}" alt="Torta empresarial en Cali ${i}" loading="${i <= 4 ? 'eager' : 'lazy'}" style="cursor:zoom-in" />`;
-      grid.appendChild(div);
-    }
+
+const alts = [
+  "Torta empresarial con logotipo corporativo",
+  "Torta para aniversario de empresa en Cali",
+  "Torta empresarial en forma de taza de café", // Imagen 3
+  "Pastel personalizado para eventos corporativos",
+  "Torta de celebración empresarial plateada",
+  "Torta corporativa para inauguración de verde y dorada",
+  "Torta para hospital con decoración médica", // Imagen 7
+  "Pastel temático de hospital y salud", // Imagen 8
+  "Torta de integración empresarial en Cali",
+  "Pastel corporativo con diseño institucional",
+  "Torta para evento empresarial en Unicentro", // Imagen 11
+  "Torta de agradecimiento para colaboradores",
+  "Torta empresarial dorada elegante", // Imagen 13
+  "Pastel corporativo para fin de año"
+];
+
+for (let i = 1; i <= 14; i++) {
+  const num = String(i).padStart(2, '0');
+  const src = `../images/galeria/adultos/empresariales/empresariales-${num}.webp`;
+
+  const div = document.createElement('div');
+  div.className = 'pag-gallery-item';
+
+  div.innerHTML = `
+    <img
+      src="${src}"
+      alt="${alts[i-1]}"
+      loading="${i <= 4 ? 'eager' : 'lazy'}"
+      style="cursor:zoom-in"
+    />
+  `;
+
+  grid.appendChild(div);
+}
 
     const lightbox = document.getElementById('lightbox');
     const lightboxImg = document.getElementById('lightboxImg');
