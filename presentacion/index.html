@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Tortas San Diego — Pitch Deck</title>
+    <style>
+.slide-container{
+    width: 78%;
+    max-width: 1180px;
+    margin: 0 auto;
+    padding: 16mm 0;
+}
+        @page {
+            size: A4 landscape;
+            margin: 18mm 20mm;
+            background-color: #fdfbf9;
+            @bottom-right {
+                content: "Pág. " counter(page);
+                font-family: 'Arial', sans-serif;
+                font-size: 8.5pt;
+                color: #8c7b70;
+            }
+            @bottom-left {
+                content: "Tortas San Diego • Evolución Digital";
+                font-family: 'Arial', sans-serif;
+                font-size: 8.5pt;
+                color: #8c7b70;
+                font-weight: bold;
+            }
+        }
+        
+        * { box-sizing: border-box; }
+        
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Arial', sans-serif;
+            color: #362214;
+            line-height: 1.4;
+            background-color: #fdfbf9;
+        }
+        
+        h1, h2, h3 {
+            font-family: 'Georgia', serif;
+            color: #2c1d11;
+            margin-top: 0;
+        }
+        
+        h1 { font-size: 38pt; margin-bottom: 2mm; color: #a84332; font-weight: normal; }
+        h2 { font-size: 26pt; margin-bottom: 8mm; color: #362214; border-bottom: 2px solid #e6dfd9; padding-bottom: 3mm; font-weight: normal; }
+        
+        .slide-title { page-break-before: always; }
+        .subtitle { font-size: 16pt; color: #c59b27; font-style: italic; margin-bottom: 12mm; font-family: 'Georgia', serif; }
+        
+        .table-layout { display: table; width: 100%; margin-top: 2mm; }
+        .table-row { display: table-row; }
+        .table-cell { display: table-cell; vertical-align: top; }
+        
+        .w-60 { width: 60%; padding-right: 12mm; }
+        .w-40 { width: 40%; }
+        .w-50 { width: 50%; padding-right: 8mm; }
+        .w-50-last { width: 50%; padding-left: 8mm; }
+        .w-33 { width: 33.33%; padding: 0 4mm; }
+        .w-33:first-child { padding-left: 0; }
+        .w-33:last-child { padding-right: 0; }
+        
+        .placeholder-box {
+            background-color: #f5f0eb;
+            border: 2px dashed #c59b27;
+            border-radius: 6px;
+            padding: 20mm 6mm;
+            text-align: center;
+            color: #7a685c;
+            font-size: 12pt;
+            font-style: italic;
+        }
+        
+        .highlight-card {
+            background-color: #fcf6f2;
+            border-left: 5px solid #a84332;
+            padding: 6mm 8mm;
+            margin-bottom: 8mm;
+        }
+        
+        .highlight-card h3 { font-size: 16pt; margin-bottom: 2mm; color: #a84332; }
+        .highlight-card p { margin: 0; font-size: 13pt; }
+        
+        .tech-card {
+            background-color: #f7f3ef;
+            border-top: 5px solid #c59b27;
+            padding: 8mm 6mm;
+            border-radius: 0 0 4px 4px;
+            height: 100%;
+        }
+        
+        .tech-card h3 { font-size: 15pt; color: #2c1d11; margin-bottom: 4mm; font-weight: bold; }
+        .tech-card p { font-size: 12pt; color: #4a3629; margin: 0; line-height: 1.5; }
+        
+        .badge {
+            display: inline-block;
+            background-color: #a84332;
+            color: white;
+            padding: 2mm 4mm;
+            font-size: 10pt;
+            font-weight: bold;
+            text-transform: uppercase;
+            margin-bottom: 4mm;
+            border-radius: 2px;
+            letter-spacing: 1px;
+        }
+        
+        .big-quote {
+            font-size: 18pt;
+            font-family: 'Georgia', serif;
+            color: #a84332;
+            font-style: italic;
+            text-align: center;
+            padding: 10mm;
+            background-color: #fcf6f2;
+            border-radius: 8px;
+            margin-bottom: 8mm;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- DIAPOSITIVA 1: EL GANCHO Y EL LEGADO -->
+    <div class="slide-container">
+        <span class="badge">01. El Legado</span>
+        <h1><center>Tortas San Diego</center></h1>
+        <div class="subtitle"><center>30 años de maestría artesanal en Cali</center></div>
+        
+        <div class="table-layout">
+            <div class="table-row">
+                <div class="table-cell w-60">
+                    <div class="highlight-card">
+                        <h3>Tradición Innegociable</h3>
+                        <p>Fundada por mi madre. Un éxito construido 100% por el "voz a voz" de miles de familias.</p>
+                    </div>
+                    <div class="highlight-card">
+                        <h3>Calidad Real</h3>
+                        <p>No usamos esencias artificiales ni premezclas. Nuestro diferencial es el jugo natural y la mantequilla auténtica.</p>
+                    </div>
+                </div>
+                
+                <div class="table-cell w-40">
+                    <img src="images/fantasia-40.webp" alt="Torta temática" style="max-width: 80%; height: auto; margin-top: 0; border-radius: 6px;">
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- DIAPOSITIVA 2: EL PROBLEMA -->
+    <div class="slide-container">
+        <h2 class="slide-title"><span class="badge" style="background-color: #362214;">02. El Desafío</span><br><center>La Brecha de Percepción</center></h2>
+        
+        <div class="big-quote">
+            "El cliente digital juzga con los ojos antes que con el paladar."
+        </div>
+        
+        <div class="table-layout">
+            <div class="table-row">
+                <div class="table-cell w-50">
+                    <div class="highlight-card" style="border-left-color: #362214; background-color: #f7f5f2;">
+                        <h3 style="color: #362214;">Operación Residencial</h3>
+                        <p>Nuestro taller está en casa. La falta de una vitrina comercial genera fricción en clientes nuevos al momento de recoger pedidos premium.</p>
+                    </div>
+                </div>
+                <div class="table-cell w-50-last">
+                    <div class="highlight-card" style="border-left-color: #362214; background-color: #f7f5f2;">
+                        <h3 style="color: #362214;">Excelente Producto, Logística Limitada</h3>
+                        <p>Las ventas se estancan por la percepción visual del lugar de entrega, no por la calidad de las tortas.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- DIAPOSITIVA 3: LA SOLUCIÓN -->
+    <div class="slide-container">
+        <h2 class="slide-title"><span class="badge" style="background-color: #c59b27;">03. La Evolución</span><br><center>Nuestros 3 Pilares de Crecimiento</center></h2>
+        
+        <div class="table-layout" style="margin-top: 8mm;">
+            <div class="table-row">
+                <div class="table-cell w-33">
+                    <div class="tech-card">
+                        <h3>1. Transformación Digital</h3>
+                        <p>Web optimizada, automatización de atención en WhatsApp mediante flujos inteligentes y logística de domicilios estratégicos que elimina la fricción de entrega.</p>
+                    </div>
+                </div>
+                
+                <div class="table-cell w-33">
+                    <div class="tech-card" style="border-top-color: #a84332;">
+                        <h3>2. Publicidad Estructurada</h3>
+                        <p>Campañas segmentadas para captar demanda activa e impulsar líneas específicas, respaldadas por un CRM para fidelizar clientes históricos.</p>
+                    </div>
+                </div>
+                
+                <div class="table-cell w-33">
+                    <div class="tech-card" style="border-top-color: #362214;">
+                        <h3>3. Nuevas Líneas (Saludables)</h3>
+                        <p>Expansión del catálogo para cubrir las necesidades del mercado moderno: desarrollo de recetas exclusivas <strong>Keto, Veganas y Sin Gluten</strong>.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- DIAPOSITIVA 4: CIERRE Y MUESTRA -->
+    <div class="slide-container">
+        <h2 class="slide-title"><span class="badge">04. El Cierre</span><br>El Estándar San Diego</h2>
+        
+        <div class="table-layout">
+            <div class="table-row">
+                <div class="table-cell w-50">
+                    <div class="highlight-card" style="margin-bottom: 8mm;">
+                        <h3>Torta Negra Envinada</h3>
+                        <p>Nuestro producto insignia. Horneada con tiempo, humedecida con buen vino y sin esencias. El reflejo de nuestra excelencia.</p>
+                    </div>
+                    
+                    <p style="font-size: 14pt; color: #4a3629; font-style: italic;">
+                        "Una empresa familiar escalable, respaldada por datos y lista para el mercado digital sin perder su alma artesanal."
+                    </p>
+                </div>
+                
+                <div class="table-cell w-40">
+                    <img src="images/grados-02.webp" alt="Torta temática" style="max-width: 80%; height: auto; margin-top: 0; border-radius: 6px;">
+                </div>
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>
