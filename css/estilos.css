@@ -250,6 +250,120 @@ a { color: inherit; text-decoration: none; }
   transition: var(--transition);
 }
 
+
+/* ===== DROPDOWN GALERÍA ===== */
+.dropdown {
+  position: relative;
+}
+.dropbtn {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  cursor: pointer;
+}
+.dropdown-content {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  min-width: 240px;
+  background: var(--blanco);
+  border: 1px solid var(--gris-suave);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow-hover);
+  padding: 8px 0;
+  z-index: 50;
+  list-style: none;
+}
+.dropdown:hover .dropdown-content,
+.dropdown-content:hover {
+  display: block;
+}
+.dropdown-content li {
+  position: relative;
+}
+.dropdown-content li a {
+  display: block;
+  padding: 10px 20px;
+  font-size: 0.82rem;
+  letter-spacing: 0.04em;
+  text-transform: none;
+  color: var(--texto-suave);
+  white-space: nowrap;
+}
+.dropdown-content li a:hover {
+  background: var(--perla);
+  color: var(--carbon);
+}
+
+/* Submenú (Cumpleaños, Infantiles) */
+.dropdown-submenu {
+  position: relative;
+}
+.submenu-content {
+  display: none;
+  position: absolute;
+  top: 0;
+  left: 100%;
+  min-width: 260px;
+  background: var(--blanco);
+  border: 1px solid var(--gris-suave);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow-hover);
+  padding: 8px 0;
+  list-style: none;
+}
+.dropdown-submenu:hover .submenu-content {
+  display: block;
+}
+.submenu-content li a {
+  display: block;
+  padding: 10px 20px;
+  font-size: 0.82rem;
+  color: var(--texto-suave);
+  white-space: nowrap;
+}
+.submenu-content li a:hover {
+  background: var(--perla);
+  color: var(--carbon);
+}
+
+/* Dropdown en móvil: bloque estático en vez de flotante */
+  .dropdown-content,
+  .submenu-content {
+    display: none;
+    position: static;
+    box-shadow: none;
+    border: none;
+    background: transparent;
+    padding-left: 16px;
+    min-width: 0;
+  }
+
+  /* Se abre con clase .open (vía JS), ya no con :hover */
+  .dropdown.open > .dropdown-content,
+  .dropdown-submenu.open > .submenu-content {
+    display: block;
+  }
+
+  .dropdown:hover .dropdown-content,
+  .dropdown-submenu:hover .submenu-content {
+    display: none; /* anulamos el hover en móvil */
+  }
+
+  .dropdown.open > .dropdown-content,
+  .dropdown-submenu.open > .submenu-content {
+    display: block; /* re-forzamos por si el hover de arriba pisa */
+  }
+
+  .dropbtn, .dropdown-submenu > a {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+  }
+
+
 /* ===== HERO ===== */
 .hero {
   min-height: 100vh;
