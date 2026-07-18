@@ -8,7 +8,11 @@ window.addEventListener('scroll', () => {
 });
 navToggle.addEventListener('click', () => navLinks.classList.toggle('open'));
 navLinks.querySelectorAll('a').forEach(link => {
-  link.addEventListener('click', () => navLinks.classList.remove('open'));
+  link.addEventListener('click', () => {
+    // No cerrar el menú si el link es un toggle de dropdown (Galería, Cumpleaños, Infantiles)
+    if (link.classList.contains('dropbtn') || link.closest('.dropdown-submenu')) return;
+    navLinks.classList.remove('open');
+  });
 });
 
 // ===== HERO SLIDER =====
