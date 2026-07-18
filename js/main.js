@@ -144,3 +144,36 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     }
   });
 });
+
+// ===== DROPDOWN MENU (click en móvil, hover en desktop) =====
+document.addEventListener('DOMContentLoaded', () => {
+  const isMobile = () => window.innerWidth <= 680;
+
+  document.querySelectorAll('.dropdown > .dropbtn, .dropdown-submenu > a').forEach(link => {
+    link.addEventListener('click', (e) => {
+      if (!isMobile()) return; // en desktop deja el comportamiento normal (hover / navegar)
+
+      e.preventDefault(); // en móvil, el primer click abre, no navega
+      const parent = link.parentElement;
+      const isOpen = parent.classList.contains('open');
+
+      // cierra hermanos del mismo nivel
+      parent.parentElement.querySelectorAll(':scope > .dropdown, :scope > .dropdown-submenu')
+        .forEach(el => el.classList.remove('open'));
+
+      parent.classList.toggle('open', !isOpen);
+    });
+  });
+
+  // Cierra todo al cerrar el menú hamburguesa
+  const navToggle = document.getElementById('navToggle');
+  const navLinks = document.getElementById('navLinks');
+  if (navToggle && navLinks) {
+    navToggle.addEventListener('click', () => {
+      if (!navLinks.classList.contains('open')) {
+        document.querySelectorAll('.dropdown.open, .dropdown-submenu.open')
+          .forEach(el => el.classList.remove('open'));
+      }
+    });
+  }
+});
