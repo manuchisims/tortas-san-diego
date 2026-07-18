@@ -20,6 +20,7 @@
   <link rel="preload" href="../images/galeria/adultos/aniversarios/aniversarios-01.webp" as="image">
   <style>*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}html{scroll-behavior:smooth;font-size:16px}body{font-family:'Jost',system-ui,sans-serif;color:#3D3530;background:#F5F1EC;background-image:url('../images/fondo-de-pagina-01b.webp');background-repeat:repeat;background-size:480px;line-height:1.7;-webkit-font-smoothing:antialiased}img{max-width:100%;display:block}a{color:inherit;text-decoration:none}.navbar{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(254,252,250,0.92);backdrop-filter:blur(12px);border-bottom:1px solid #E8E3DC}.nav-inner{max-width:1100px;margin:0 auto;padding:0 24px;height:68px;display:flex;align-items:center;justify-content:space-between}.nav-logo{display:flex;align-items:center;gap:10px;font-family:'Cormorant Garamond',Georgia,serif;font-size:1.35rem;font-weight:600;color:#2C2C2C}.nav-logo-img{width:36px;height:36px;object-fit:contain}.nav-links{display:flex;gap:28px}.nav-links a{font-size:.8rem;font-weight:400;letter-spacing:.1em;text-transform:uppercase;color:#7A6E65}.nav-links a:hover{color:#2C2C2C}.nav-toggle{display:none;flex-direction:column;gap:5px;background:none;border:none;cursor:pointer;padding:4px}.nav-toggle span{display:block;width:24px;height:2px;background:#2C2C2C}@media(max-width:680px){.nav-links{display:none;position:absolute;top:68px;left:0;right:0;background:rgba(254,252,250,.97);flex-direction:column;padding:24px;gap:20px;border-bottom:1px solid #E8E3DC}.nav-links.open{display:flex}.nav-toggle{display:flex}}</style>
   <!-- CSS compartido -->
+  <link rel="stylesheet" href="../css/estilos.css">
   <link rel="stylesheet" href="../css/paginas.css">
   <!-- Imagen específica de esta página -->
   <style>
@@ -40,13 +41,49 @@
       </a>
       <button class="nav-toggle" id="navToggle" aria-label="Menú"><span></span><span></span><span></span></button>
       <nav class="nav-links" id="navLinks">
-        <a href="/">Inicio</a>
-        <a href="/#galeria-adultos">Galería</a>
-        <a href="/#mesas-dulces">Mesas Dulces</a>
-        <a href="/#sabores">Sabores</a>
-        <a href="/#nosotros">Nosotros</a>
-        <a href="/#contacto">Contacto</a>
-      </nav>
+  <a href="/#inicio">Inicio</a>
+
+  <div class="dropdown">
+    <a href="/#galeria" class="dropbtn">Galería ▾</a>
+    <ul class="dropdown-content">
+      <li><a href="/aniversarios/">Aniversarios</a></li>
+      <li><a href="/bautizo-y-baby-shower/">Bautizo y Baby Shower</a></li>
+      <li class="dropdown-submenu">
+        <a href="/cumple/">Cumpleaños ▸</a>
+        <ul class="submenu-content">
+          <li><a href="/cumple/bolso-fashion-y-casinos/">Bolso Fashion y Casinos</a></li>
+          <li><a href="/cumple/cerveza-licores-y-vaqueros/">Cerveza, Licores y Vaqueros</a></li>
+          <li><a href="/cumple/chorreadas-y-chocolates/">Chorreadas y Chocolates</a></li>
+          <li><a href="/cumple/cultura-pop/">Cultura Pop</a></li>
+          <li><a href="/cumple/flores-frutas-y-dulces/">Flores, Frutas y Dulces</a></li>
+          <li><a href="/cumple/futbol-y-deportes/">Fútbol y Deportes</a></li>
+          <li><a href="/cumple/mundo/">Mundo</a></li>
+          <li><a href="/cumple/trabajos-trajes-y-transportes/">Trabajos, Trajes y Transportes</a></li>
+        </ul>
+      </li>
+      <li><a href="/empresariales/">Empresariales</a></li>
+      <li><a href="/festividades/">Festividades</a></li>
+      <li><a href="/grado/">Grado</a></li>
+      <li class="dropdown-submenu">
+        <a href="/infantiles/">Infantiles ▸</a>
+        <ul class="submenu-content">
+          <li><a href="/infantiles/animales-vaqueros-y-dinosaurios/">Animales, Vaqueros y Dinosaurios</a></li>
+          <li><a href="/infantiles/cultura-pop/">Cultura Pop</a></li>
+          <li><a href="/infantiles/infantiles-princesas-disney/">Princesas Disney</a></li>
+        </ul>
+      </li>
+      <li><a href="/matrimonio/">Matrimonio</a></li>
+      <li><a href="/primera-comunion/">Primera Comunión</a></li>
+      <li><a href="/quinceanos/">Quinceaños</a></li>
+      <li><a href="/tematicas/">Temáticas</a></li>
+    </ul>
+  </div>
+
+  <a href="/#mesas-dulces">Mesas Dulces</a>
+  <a href="/#sabores">Sabores</a>
+  <a href="/#nosotros">Nosotros</a>
+  <a href="/#contacto">Contacto</a>
+</nav>
     </div>
   </header>
 
@@ -167,7 +204,32 @@
     const navLinks = document.getElementById('navLinks');
     window.addEventListener('scroll', () => navbar.classList.toggle('scrolled', window.scrollY > 20));
     navToggle.addEventListener('click', () => navLinks.classList.toggle('open'));
-    navLinks.querySelectorAll('a').forEach(l => l.addEventListener('click', () => navLinks.classList.remove('open')));
+    navLinks.querySelectorAll('a').forEach(link => {
+  link.addEventListener('click', () => {
+    if (link.classList.contains('dropbtn') || link.closest('.dropdown-submenu')) return;
+    navLinks.classList.remove('open');
+  });
+});
+
+const isMobile = () => window.innerWidth <= 680;
+document.querySelectorAll('.dropdown > .dropbtn, .dropdown-submenu > a').forEach(link => {
+  link.addEventListener('click', (e) => {
+    if (!isMobile()) return;
+    e.preventDefault();
+    const parent = link.parentElement;
+    const isOpen = parent.classList.contains('open');
+    parent.parentElement.querySelectorAll(':scope > .dropdown, :scope > .dropdown-submenu')
+      .forEach(el => el.classList.remove('open'));
+    parent.classList.toggle('open', !isOpen);
+  });
+});
+
+navToggle.addEventListener('click', () => {
+  if (!navLinks.classList.contains('open')) {
+    document.querySelectorAll('.dropdown.open, .dropdown-submenu.open')
+      .forEach(el => el.classList.remove('open'));
+  }
+});
 
     const grid = document.getElementById('galeriaAniversarios');
 
