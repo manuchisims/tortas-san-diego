@@ -93,15 +93,62 @@
   <header class="navbar" id="navbar">
     <div class="nav-inner">
       <a href="/" class="nav-logo">
-        <img src="https://tortasandiego.com/images/logo-192.png" alt="Tortas San Diego" class="nav-logo-img" />
+        <img src="https://tortasandiego.com/images/logo.webp" alt="Tortas San Diego" class="nav-logo-img" width="63" height="63" />
         <span>Tortas San Diego</span>
       </a>
-      <button class="nav-toggle" id="navToggle" aria-label="Menú"><span></span><span></span><span></span></button>
+      <button class="nav-toggle" id="navToggle" aria-label="Menú">
+        <span></span><span></span><span></span>
+      </button>
       <nav class="nav-links" id="navLinks">
-        <a href="/">Inicio</a>
-        <a href="/#galeria">Galería</a>
+        <a href="/#inicio">Inicio</a>
+        
+        <!-- Inicio Menú Desplegable: Galería -->
+        <div class="dropdown">
+          <a href="/#galeria" class="dropbtn">Galería ▾</a>
+          <ul class="dropdown-content">
+            <li><a href="/aniversarios/">Aniversarios</a></li>
+            <li><a href="/bautizo-y-baby-shower/">Bautizo y Baby Shower</a></li>
+            
+            <!-- Subcategoría: Cumpleaños -->
+            <li class="dropdown-submenu">
+              <a href="/cumple/">Cumpleaños ▸</a>
+              <ul class="submenu-content">
+                <li><a href="/cumple/bolso-fashion-y-casinos/">Bolso Fashion y Casinos</a></li>
+                <li><a href="/cumple/cerveza-licores-y-vaqueros/">Cerveza, Licores y Vaqueros</a></li>
+                <li><a href="/cumple/chorreadas-y-chocolates/">Chorreadas y Chocolates</a></li>
+                <li><a href="/cumple/cultura-pop/">Cultura Pop</a></li>
+                <li><a href="/cumple/flores-frutas-y-dulces/">Flores, Frutas y Dulces</a></li>
+                <li><a href="/cumple/futbol-y-deportes/">Fútbol y Deportes</a></li>
+                <li><a href="/cumple/mundo/">Mundo</a></li>
+                <li><a href="/cumple/trabajos-trajes-y-transportes/">Trabajos, Trajes y Transportes</a></li>
+              </ul>
+            </li>
+            
+            <li><a href="/empresariales/">Empresariales</a></li>
+            <li><a href="/festividades/">Festividades</a></li>
+            <li><a href="/grado/">Grado</a></li>
+            
+            <!-- Subcategoría: Infantiles -->
+            <li class="dropdown-submenu">
+              <a href="/infantiles/">Infantiles ▸</a>
+              <ul class="submenu-content">
+                <li><a href="/infantiles/animales-vaqueros-y-dinosaurios/">Animales, Vaqueros y Dinosaurios</a></li>
+                <li><a href="/infantiles/cultura-pop/">Cultura Pop</a></li>
+                <li><a href="/infantiles/infantiles-princesas-disney/">Princesas Disney</a></li>
+              </ul>
+            </li>
+            
+            <li><a href="/matrimonio/">Matrimonio</a></li>
+            <li><a href="/primera-comunion/">Primera Comunión</a></li>
+            <li><a href="/quinceanos/">Quinceaños</a></li>
+            <li><a href="/tematicas/">Temáticas</a></li>
+          </ul>
+        </div>
+        <!-- Fin Menú Desplegable: Galería -->
+
         <a href="/#mesas-dulces">Mesas Dulces</a>
         <a href="/#sabores">Sabores</a>
+        <a href="/#decoracion">Decoración</a>
         <a href="/#nosotros">Nosotros</a>
         <a href="/#contacto">Contacto</a>
       </nav>
