@@ -44,6 +44,7 @@
   --shadow: 0 4px 24px rgba(44, 44, 44, 0.08);
   --shadow-hover: 0 8px 40px rgba(44, 44, 44, 0.14);
   --transition: 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+  --hero-image: none;
 }
 
 /* ===== RESET & BASE ===== */
@@ -1018,4 +1019,134 @@ a { color: inherit; text-decoration: none; }
     font-weight:300;
     line-height:1.6;
     color:var(--texto-suave);
+}
+
+/* ===================================================
+   ESTILOS ESPECÍFICOS PARA PÁGINAS DE CATEGORÍA
+   (integrados desde paginas.css)
+   =================================================== */
+
+/* BREADCRUMB */
+.breadcrumb {
+  font-size: 0.8rem;
+  color: rgba(255,255,255,0.7);
+  margin-bottom: 16px;
+  letter-spacing: 0.04em;
+}
+.breadcrumb a { color: rgba(255,255,255,0.7); }
+.breadcrumb a:hover { color: #fff; }
+.breadcrumb span { margin: 0 6px; }
+
+/* HERO DE CATEGORÍA */
+.pag-hero {
+  min-height: 52vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 120px 24px 64px;
+
+  background:
+    linear-gradient(160deg, rgba(0,0,0,.7), rgba(0,0,0,.7)),
+    var(--hero-image) center/cover no-repeat;
+
+  position: relative;
+}
+.pag-hero-content { position: relative; z-index: 1; max-width: 700px; }
+.pag-hero h1 {
+  font-family: var(--font-display);
+  font-size: clamp(2.8rem, 6vw, 5.5rem);
+  font-weight: 300;
+  color: #fff;
+  line-height: 1.05;
+  margin-bottom: 20px;
+}
+.pag-hero h1 em { font-style: italic; color: var(--habano); }
+.pag-hero-sub {
+  font-size: 1rem;
+  color: rgba(255,255,255,0.85);
+  max-width: 520px;
+  margin: 0 auto 32px;
+  font-weight: 300;
+  line-height: 1.65;
+}
+
+/* CONTENEDOR INTERNO */
+.pag-inner { max-width: 1100px; margin: 0 auto; padding: 0 24px; }
+
+/* INTRO */
+.pag-intro { padding: 80px 24px; background: rgba(254,252,250,0.85); }
+.pag-intro-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 64px; align-items: start; }
+.pag-intro h2 {
+  font-family: var(--font-display);
+  font-size: clamp(1.8rem,3vw,2.6rem);
+  font-weight: 300;
+  color: var(--carbon);
+  margin-bottom: 20px;
+}
+.pag-intro p { color: var(--texto-suave); font-weight: 300; margin-bottom: 16px; line-height: 1.7; }
+.pag-features { display: flex; flex-direction: column; gap: 24px; }
+.pag-feature { display: flex; gap: 16px; align-items: flex-start; }
+.pag-feature-icon { font-size: 1rem; color: var(--habano); margin-top: 3px; flex-shrink: 0; }
+.pag-feature strong { display: block; font-size: 0.9rem; color: var(--carbon); margin-bottom: 4px; }
+.pag-feature p { font-size: 0.85rem; color: var(--texto-suave); margin: 0; }
+
+/* GALERÍA DE CATEGORÍA */
+.pag-galeria { padding: 80px 24px; }
+.pag-titulo {
+  font-family: var(--font-display);
+  font-size: clamp(1.8rem,3vw,2.8rem);
+  font-weight: 300;
+  color: var(--carbon);
+  margin-bottom: 12px;
+}
+.pag-desc { color: var(--texto-suave); font-weight: 300; margin-bottom: 48px; max-width: 560px; }
+.pag-gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 12px;
+}
+.pag-gallery-item {
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  transition: transform var(--transition), box-shadow var(--transition);
+}
+.pag-gallery-item:hover { transform: translateY(-4px); box-shadow: var(--shadow-hover); }
+.pag-gallery-item img {
+  width: 100%;
+  height: 220px;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.5s ease;
+}
+.pag-gallery-item:hover img { transform: scale(1.04); }
+
+/* FAQ */
+.pag-faq { padding: 80px 24px; }
+.faq-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 32px; margin-top: 40px; }
+.faq-item {
+  background: rgba(254,252,250,0.85);
+  border: 1px solid var(--gris-suave);
+  border-radius: var(--radius-lg);
+  padding: 28px 24px;
+}
+.faq-item h3 { font-family: var(--font-display); font-size: 1.1rem; font-weight: 400; color: var(--carbon); margin-bottom: 10px; }
+.faq-item p { font-size: 0.88rem; color: var(--texto-suave); font-weight: 300; line-height: 1.65; }
+
+/* CTA DE CATEGORÍA */
+.pag-cta { padding: 80px 24px; background: var(--carbon); text-align: center; }
+.pag-cta-inner { max-width: 600px; margin: 0 auto; }
+.pag-cta h2 { font-family: var(--font-display); font-size: 2.4rem; font-weight: 300; color: var(--habano); margin-bottom: 16px; }
+.pag-cta p { color: rgba(255,255,255,0.7); margin-bottom: 32px; }
+.pag-cta-contact { font-size: 0.85rem; color: rgba(255,255,255,0.5); margin-top: 20px; margin-bottom: 0; }
+
+/* RESPONSIVE — específico de páginas de categoría */
+@media(max-width:900px) {
+  .pag-intro-grid { grid-template-columns:1fr; gap:40px; }
+  .faq-grid { grid-template-columns:1fr; }
+  .pag-gallery-grid { grid-template-columns:repeat(3,1fr); }
+}
+@media(max-width:680px) {
+  .pag-gallery-grid { grid-template-columns:1fr 1fr; }
+  .pag-gallery-item img { height:160px; }
 }
