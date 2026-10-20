@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -21,18 +22,76 @@
   <style>*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}html{scroll-behavior:smooth;font-size:16px}body{font-family:'Jost',system-ui,sans-serif;color:#3D3530;background:#F5F1EC;background-image:url('../images/fondo-de-pagina-01b.webp');background-repeat:repeat;background-size:480px;line-height:1.7;-webkit-font-smoothing:antialiased}img{max-width:100%;display:block}a{color:inherit;text-decoration:none}.navbar{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(254,252,250,0.92);backdrop-filter:blur(12px);border-bottom:1px solid #E8E3DC}.nav-inner{max-width:1100px;margin:0 auto;padding:0 24px;height:68px;display:flex;align-items:center;justify-content:space-between}.nav-logo{display:flex;align-items:center;gap:10px;font-family:'Cormorant Garamond',Georgia,serif;font-size:1.35rem;font-weight:600;color:#2C2C2C}.nav-logo-img{width:36px;height:36px;object-fit:contain}.nav-links{display:flex;gap:28px}.nav-links a{font-size:.8rem;font-weight:400;letter-spacing:.1em;text-transform:uppercase;color:#7A6E65}.nav-links a:hover{color:#2C2C2C}.nav-toggle{display:none;flex-direction:column;gap:5px;background:none;border:none;cursor:pointer;padding:4px}.nav-toggle span{display:block;width:24px;height:2px;background:#2C2C2C}@media(max-width:680px){.nav-links{display:none;position:absolute;top:68px;left:0;right:0;background:rgba(254,252,250,.97);flex-direction:column;padding:24px;gap:20px;border-bottom:1px solid #E8E3DC}.nav-links.open{display:flex}.nav-toggle{display:flex}}</style>
   <!-- CSS compartido -->
   <link rel="stylesheet" href="../css/paginas.css">
-  <!-- Imagen específica de esta página -->
+  <!-- Estilos específicos para la cuadrícula de categorías -->
   <style>
     .pag-hero {
       background-image:
         linear-gradient(160deg, rgba(0,0,0,.7), rgba(0,0,0,.7)),
         url("../images/galeria/festividades/navidad-01.webp");
     }
+    .categorias-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+      margin-top: 40px;
+    }
+    .categoria-card {
+      display: block;
+      background: rgba(254,252,250,0.9);
+      border: 1px solid var(--gris-suave);
+      border-radius: var(--radius-lg);
+      overflow: hidden;
+      transition: transform var(--transition), box-shadow var(--transition);
+      text-decoration: none;
+    }
+    .categoria-card:hover {
+      transform: translateY(-6px);
+      box-shadow: var(--shadow-hover);
+      border-color: var(--habano);
+    }
+    .categoria-img-wrap {
+      overflow: hidden;
+      height: 260px;
+    }
+    .categoria-img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.6s ease;
+    }
+    .categoria-card:hover .categoria-img {
+      transform: scale(1.05);
+    }
+    .categoria-info {
+      padding: 24px;
+      text-align: center;
+    }
+    .categoria-info h3 {
+      font-family: var(--font-display);
+      font-size: 1.5rem;
+      color: var(--carbon);
+      margin-bottom: 8px;
+    }
+    .categoria-info span {
+      font-size: 0.8rem;
+      color: var(--habano-oscuro);
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      font-weight: 500;
+      transition: color var(--transition);
+    }
+    .categoria-card:hover .categoria-info span {
+      color: var(--habano);
+    }
+    @media(max-width:900px) {
+      .categorias-grid { grid-template-columns: 1fr; gap: 32px; }
+      .categoria-img-wrap { height: 300px; }
+    }
   </style>
 </head>
 
 <body>
- <header class="navbar" id="navbar">
+  <header class="navbar" id="navbar">
     <div class="nav-inner">
       <a href="/" class="nav-logo">
         <img src="https://tortasandiego.com/images/logo.webp" alt="Tortas San Diego" class="nav-logo-img" width="63" height="63" />
@@ -67,7 +126,17 @@
             </li>
             
             <li><a href="/empresariales/">Empresariales</a></li>
-            <li><a href="/festividades/">Festividades</a></li>
+
+            <!-- Subcategoría: Festividades -->
+            <li class="dropdown-submenu">
+              <a href="/festividades/">Festividades ▸</a>
+              <ul class="submenu-content">
+                <li><a href="/festividades/navidad/">Navidad</a></li>
+                <li><a href="/festividades/halloween/">Halloween</a></li>
+                <li><a href="/festividades/diademadres/">Día de las Madres</a></li>
+              </ul>
+            </li>
+
             <li><a href="/grado/">Grado</a></li>
             
             <!-- Subcategoría: Infantiles -->
@@ -130,31 +199,49 @@
     </div>
   </section>
 
-  <div class="lightbox" id="lightbox">
-    <button class="lightbox-close" id="lightboxClose" aria-label="Cerrar">✕</button>
-    <button class="lightbox-prev" id="lightboxPrev" aria-label="Anterior">‹</button>
-    <button class="lightbox-next" id="lightboxNext" aria-label="Siguiente">›</button>
-    <div class="lightbox-img-wrap"><img src="" alt="" id="lightboxImg" /></div>
-  </div>
-
-  <section class="pag-galeria" id="seccionGaleria">
+  <!-- SECCIÓN DE CATEGORÍAS -->
+  <section class="pag-galeria" style="background: rgba(254,252,250,0.5);">
     <div class="pag-inner">
-      <p class="section-eyebrow" style="color:#9E8060">Nuestro trabajo</p>
-      <h2 class="pag-titulo" style="margin-bottom: 20px;">Galería de Festividades</h2>
-      <p class="pag-desc" style="margin-bottom: 24px;">Ediciones especiales creadas en nuestro taller en Cali. Haz clic en cualquier imagen para verla en grande.</p>
+      <p class="section-eyebrow" style="color:#9E8060">Descubre nuestras ediciones</p>
+      <h2 class="pag-titulo">Explora las festividades</h2>
+      <p class="pag-desc">Haz clic en la festividad que quieres celebrar para ver todos los diseños que hemos creado en nuestro taller en Cali.</p>
 
-      <!-- SECCIÓN NAVIDAD -->
-      <h3 style="font-family: var(--font-display); font-size: 2rem; color: var(--carbon); margin: 32px 0 16px; font-weight: 400;">Magia de Navidad</h3>
-      <div class="pag-gallery-grid" id="galeriaNavidad"></div>
+      <div class="categorias-grid">
 
-      <!-- SECCIÓN HALLOWEEN -->
-      <h3 style="font-family: var(--font-display); font-size: 2rem; color: var(--carbon); margin: 56px 0 16px; font-weight: 400;">Diversión en Halloween</h3>
-      <div class="pag-gallery-grid" id="galeriaHalloween"></div>
+        <!-- Categoría 1 -->
+        <a href="navidad/" class="categoria-card">
+          <div class="categoria-img-wrap">
+            <img src="../images/galeria/festividades/navidad-01.webp" alt="Torta de Navidad con diseño de taza" class="categoria-img" loading="eager" />
+          </div>
+          <div class="categoria-info">
+            <h3>Magia de Navidad</h3>
+            <span>Ver galería ›</span>
+          </div>
+        </a>
 
-      <!-- SECCIÓN DÍA DE LA MADRE -->
-      <h3 style="font-family: var(--font-display); font-size: 2rem; color: var(--carbon); margin: 56px 0 16px; font-weight: 400;">Amor para Mamá</h3>
-      <div class="pag-gallery-grid" id="galeriaMadres"></div>
+        <!-- Categoría 2 -->
+        <a href="halloween/" class="categoria-card">
+          <div class="categoria-img-wrap">
+            <img src="../images/galeria/festividades/halloween-01.webp" alt="Torta de Halloween con calabazas y fantasmas" class="categoria-img" loading="eager" />
+          </div>
+          <div class="categoria-info">
+            <h3>Diversión en Halloween</h3>
+            <span>Ver galería ›</span>
+          </div>
+        </a>
 
+        <!-- Categoría 3 -->
+        <a href="diademadres/" class="categoria-card">
+          <div class="categoria-img-wrap">
+            <img src="../images/galeria/festividades/madres-01.webp" alt="Torta Día de las Madres con flores" class="categoria-img" loading="eager" />
+          </div>
+          <div class="categoria-info">
+            <h3>Amor para Mamá</h3>
+            <span>Ver galería ›</span>
+          </div>
+        </a>
+
+      </div>
     </div>
   </section>
 
@@ -227,123 +314,6 @@
     window.addEventListener('scroll', () => navbar.classList.toggle('scrolled', window.scrollY > 20));
     navToggle.addEventListener('click', () => navLinks.classList.toggle('open'));
     navLinks.querySelectorAll('a').forEach(l => l.addEventListener('click', () => navLinks.classList.remove('open')));
-
-   // 1. NAVIDAD
-const gridNavidad = document.getElementById('galeriaNavidad');
-
-const altsNavidad = [
-  "Torta de Navidad con diseño de taza",
-  "Pastel navideño decorado en Cali",
-  "Torta de Navidad con árbol y esferas",
-  "Torta navideña elegante con árbol",
-  "Pastel tradicional para cena de Navidad",
-  "Torta de navidad personalizada",
-  "Torta de fin de año y Navidad en Cali",
-  "Pastel con decoración de navidad dorada",
-  "Torta navideña artesanal con chimenea"
-];
-
-for (let i = 1; i <= 9; i++) {
-  const num = String(i).padStart(2, '0');
-  const div = document.createElement('div'); 
-  div.className = 'pag-gallery-item';
-  div.innerHTML = `
-    <img 
-      src="../images/galeria/festividades/navidad-${num}.webp" 
-      alt="${altsNavidad[i-1]}" 
-      loading="${i <= 4 ? 'eager' : 'lazy'}" 
-      style="cursor:zoom-in" 
-    />`;
-  gridNavidad.appendChild(div);
-}
-
-// 2. HALLOWEEN
-const gridHalloween = document.getElementById('galeriaHalloween');
-
-const altsHalloween = [
-  "Torta de Halloween con calabazas y fantasmas",
-  "Pastel temático de terror para Halloween en Cali",
-  "Torta de Halloween divertida con fantasmas",
-  "Torta de calabaza personalizada para Halloween",
-  "Pastel de Halloween con detalles espeluznantes"
-];
-
-for (let i = 1; i <= 5; i++) {
-  const num = String(i).padStart(2, '0');
-  const div = document.createElement('div'); 
-  div.className = 'pag-gallery-item';
-  div.innerHTML = `
-    <img 
-      src="../images/galeria/festividades/halloween-${num}.webp" 
-      alt="${altsHalloween[i-1]}" 
-      loading="lazy" 
-      style="cursor:zoom-in" 
-    />`;
-  gridHalloween.appendChild(div);
-}
-
-// 3. MADRES
-const gridMadres = document.getElementById('galeriaMadres');
-
-const altsMadres = [
-  "Torta Día de las Madres con flores",
-  "Pastel personalizado para mamá en Cali",
-  "Torta elegante para el Día de la Madre",
-  "Torta de madres con decoración floral delicada",
-  "Pastel de celebración para el Día de las Madres",
-  "Torta para mamá con detalles de rosas de azúcar",
-  "Pastel artesanal para regalar en el Día de la Madre"
-];
-
-for (let i = 1; i <= 7; i++) {
-  const num = String(i).padStart(2, '0');
-  const div = document.createElement('div'); 
-  div.className = 'pag-gallery-item';
-  div.innerHTML = `
-    <img 
-      src="../images/galeria/festividades/madres-${num}.webp" 
-      alt="${altsMadres[i-1]}" 
-      loading="lazy" 
-      style="cursor:zoom-in" 
-    />`;
-  gridMadres.appendChild(div);
-}
-
-    // LIGHTBOX GLOBAL PARA LA SECCIÓN DE GALERÍAS
-    const seccionGaleria = document.getElementById('seccionGaleria');
-    const lightbox = document.getElementById('lightbox');
-    const lightboxImg = document.getElementById('lightboxImg');
-    let currentIdx = 0;
-    
-    seccionGaleria.addEventListener('click', e => {
-      const img = e.target.closest('img');
-      if (!img) return;
-      // Toma TODAS las imágenes dentro de 'seccionGaleria' para poder navegar entre Navidad, Halloween y Madres sin cortes
-      const allImgs = [...seccionGaleria.querySelectorAll('img')];
-      currentIdx = allImgs.indexOf(img);
-      lightboxImg.src = img.src;
-      lightboxImg.alt = img.alt;
-      lightbox.classList.add('open');
-      document.body.style.overflow = 'hidden';
-    });
-
-    function closeLB() { lightbox.classList.remove('open'); document.body.style.overflow = ''; }
-    function showLB(idx) {
-      const allImgs = [...seccionGaleria.querySelectorAll('img')];
-      currentIdx = (idx + allImgs.length) % allImgs.length;
-      lightboxImg.src = allImgs[currentIdx].src;
-    }
-
-    document.getElementById('lightboxClose').addEventListener('click', closeLB);
-    document.getElementById('lightboxPrev').addEventListener('click', () => showLB(currentIdx - 1));
-    document.getElementById('lightboxNext').addEventListener('click', () => showLB(currentIdx + 1));
-    lightbox.addEventListener('click', e => { if (e.target === lightbox) closeLB(); });
-    document.addEventListener('keydown', e => {
-      if (!lightbox.classList.contains('open')) return;
-      if (e.key === 'Escape') closeLB();
-      if (e.key === 'ArrowLeft') showLB(currentIdx - 1);
-      if (e.key === 'ArrowRight') showLB(currentIdx + 1);
-    });
 
     window.addEventListener('load', function() {
       var s = document.createElement('script');
