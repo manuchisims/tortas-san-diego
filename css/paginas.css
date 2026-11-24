@@ -1150,6 +1150,3 @@ a { color: inherit; text-decoration: none; }
   .pag-gallery-grid { grid-template-columns:1fr 1fr; }
   .pag-gallery-item img { height:160px; }
 }
-
-.dropdown.open > .dropdown-content,
-.dropdown-submenu.open > .submenu-content { display: block; }
