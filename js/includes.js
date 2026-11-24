@@ -16,3 +16,21 @@ Promise.all([
   navToggle.addEventListener('click', () => navLinks.classList.toggle('open'));
   navLinks.querySelectorAll('a').forEach(l => l.addEventListener('click', () => navLinks.classList.remove('open')));
 });
+
+(function () {
+  var links = document.getElementById('navLinks');
+  if (!links) return;
+
+  var esMovil = function () { return window.matchMedia('(max-width: 680px)').matches; };
+
+  links.querySelectorAll('.dropbtn, .dropdown-submenu > a').forEach(function (a) {
+    a.addEventListener('click', function (e) {
+      if (!esMovil()) return;
+      var padre = a.parentElement;
+      if (!padre.classList.contains('open')) {
+        e.preventDefault();
+        padre.classList.add('open');
+      }
+    });
+  });
+})();
